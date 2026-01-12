@@ -1,0 +1,21 @@
+# Bytecode and Caches
+__pycache__/
+*.pyc
+
+# Virtual Environments
+venv/
+.env
+
+# Jupyter Notebook Checkpoints
+*.ipynb_checkpoints
+
+# Data 
+data/
+
+# Operating System / Editor Files
+.DS_Store
+Thumbs.db
+
+# Test Reports and Temporary Files
+*.log
+*.tmp

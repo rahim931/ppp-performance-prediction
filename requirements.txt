@@ -1,0 +1,8 @@
+numpy
+pandas
+python-Levenshtein
+scikit-learn
+apted  # for AST-Edit-Distance
+requests
+httpx  # optional for API-req
+jsonlines
