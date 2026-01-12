@@ -10,7 +10,10 @@ venv/
 *.ipynb_checkpoints
 
 # Data 
-data/
+data/bin_greedy
+data/cvrp_lns
+data/premarshalling_astar
+data/puzzle_astar
 
 # Operating System / Editor Files
 .DS_Store
