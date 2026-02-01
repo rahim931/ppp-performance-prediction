@@ -1,25 +1,34 @@
-'''import time
+import time
 import hashlib
 from typing import Optional, List, Dict, Any
 
 import requests
 
 from src.api.interface import LLMClient, LLMResponse
-from src.api.config import IMIConfig
+from src.api.deepseek_config import DeepSeekConfig
 
 
-class IMILLMClient(LLMClient):
+class DeepSeekLLMClient(LLMClient):
     """
-    Concrete LLM client for the IMI API.
+    Concrete LLM client for DeepSeek (OpenAI-compatible Chat Completions API).
     Implements the shared contract: generate() -> LLMResponse
     """
 
-    def __init__(self, cfg: IMIConfig):
+    def __init__(self, cfg: DeepSeekConfig):
         self.cfg = cfg
-        self.endpoint = f"{cfg.base_url.rstrip('/')}/generate"
+        base = cfg.base_url.rstrip("/")
+        # DeepSeek uses OpenAI-compatible endpoints.
+        self.endpoint = f"{base}/v1/chat/completions"
 
-    def _prompt_hash(self, prompt: str, temperature: float, max_tokens: int, stop: Optional[List[str]]) -> str:
-        payload = f"{prompt}|temp={temperature}|max={max_tokens}|stop={stop}"
+    def _prompt_hash(
+        self,
+        prompt: str,
+        temperature: float,
+        max_tokens: int,
+        stop: Optional[List[str]],
+        model: str,
+    ) -> str:
+        payload = f"{model}|{prompt}|temp={temperature}|max={max_tokens}|stop={stop}"
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
     def generate(
@@ -31,16 +40,20 @@ class IMILLMClient(LLMClient):
         stop: Optional[List[str]] = None,
         meta: Optional[Dict[str, Any]] = None,
     ) -> LLMResponse:
-        prompt_hash = self._prompt_hash(prompt, temperature, max_tokens, stop)
+        model = self.cfg.model
+        prompt_hash = self._prompt_hash(prompt, temperature, max_tokens, stop, model)
+
         headers = {
             "Authorization": f"Bearer {self.cfg.api_key}",
             "Content-Type": "application/json",
         }
 
-        # Payload gemäß Aufgabenbeschreibung / IMI-Endpoint
+        # OpenAI-style messages format
         payload: Dict[str, Any] = {
-            "model": self.cfg.model,
-            "prompt": prompt,
+            "model": model,
+            "messages": [
+                {"role": "user", "content": prompt},
+            ],
             "temperature": temperature,
             "max_tokens": max_tokens,
         }
@@ -56,23 +69,22 @@ class IMILLMClient(LLMClient):
         )
         latency = time.time() - t0
 
-        # Basic error handling (robustness kommt in Schritt 3)
         r.raise_for_status()
         raw = r.json()
 
-        # Versuche typische Felder zu lesen (je nach API-Format)
-        text = (
-            raw.get("text")
-            or raw.get("response")
-            or raw.get("generated_text")
-            or ""
-        )
+        # Typical OpenAI-compatible response parsing
+        text = ""
+        try:
+            text = raw["choices"][0]["message"]["content"]
+        except Exception:
+            # Fallbacks if format differs
+            text = raw.get("text") or raw.get("response") or ""
 
         return LLMResponse(
             text=text,
             raw=raw,
-            model=self.cfg.model,
+            model=model,
             prompt_hash=prompt_hash,
             latency_s=latency,
             cached=False,
-        )'''
+        )
