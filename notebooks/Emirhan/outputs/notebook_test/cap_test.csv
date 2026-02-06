@@ -1,0 +1,51 @@
+heuristic_id,raw_app_type,strategy,objective,llm_value,llm_confidence,parse_ok,parse_error,model,prompt_hash,latency_s,cached,raw_text
+pop_0_op_e1_n0_251224_134701,bin_greedy,e1,1.51534,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,d96961466efcd57742a930f1e27d362ac0ba3f14b3ac76734f11dd42cde28e70,1.7881393432617188e-05,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n10_251224_134701,bin_greedy,e1,0.3277,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,4acda464aafd3beca83c65fb0788f11ea6e66c1fbfec368c3d724114f9b137cf,1.6689300537109375e-06,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n11_251224_134701,bin_greedy,e1,1.51534,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,6ccaada4e2dc06b72c30a6b4bafa1bf8e91d307890c65e67889ec207706449de,2.1457672119140625e-06,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n12_251224_134701,bin_greedy,e1,0.05815,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,c960c05a810b2c8e6a5a925648218a8cdfbdaa996b08043604ded1f7fa99d11a,9.5367431640625e-07,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n13_251224_134701,bin_greedy,e1,0.05755,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,3af650fad60feebf36ef2fd2fd42cc808c63cd63d5c69bb1e11b948a2d5728c3,9.5367431640625e-07,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n14_251224_134701,bin_greedy,e1,0.03874,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,624c26bc38ebfa67613c1dacde075f36a2a0fa3b58a90875c3d5ece56989b09c,9.5367431640625e-07,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n15_251224_134701,bin_greedy,e1,0.60539,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,936ac74e984bed3124aa1e0e8add606c12958e1fd9456590299842c924364686,2.1457672119140625e-06,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n16_251224_134701,bin_greedy,e1,0.76567,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,86afdd5a7abb7446ffbd3d15df7ea3977ba31637d79b435aec8f3f566a8b55af,1.9073486328125e-06,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n17_251224_134701,bin_greedy,e1,0.04628,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,3c3a18ed0b39aed82f3f0750c378e72d6a63c9e7de9ee899f461f39fe3f9eef4,2.1457672119140625e-06,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"
+pop_0_op_e1_n18_251224_134701,bin_greedy,e1,1.51534,This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.,,True,,mock,ab0cc5e0fd42409829341209119104eb2b005e0468507c5390c6b4b2313dae05,1.6689300537109375e-06,False,"CAP result:
+{
+  ""core_idea"": ""This heuristic scores candidate actions using remaining capacity and penalty/bonus terms to prioritize placements that reduce waste and balance utilization.""
+}
+"

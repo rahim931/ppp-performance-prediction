@@ -22,8 +22,8 @@ Task:
 - For BOTH values: lower is better.
 
 Output format (JSON only, single object on last line):
-{
+{{
   "prediction": <float>,
   "confidence": <float>,
   "justification": "<short explanation>"
-}
+}}
