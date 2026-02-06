@@ -1,0 +1,36 @@
+heuristic_id,raw_app_type,strategy,objective,llm_value,llm_confidence,parse_ok,parse_error,model,prompt_hash,latency_s,cached,raw_text
+pop_0_op_e1_n0_251224_134701,bin_greedy,e1,1.51534,0.42,0.15,True,,mock,507c82662e576d69d59331d8eb00531a7f8f8f713356d7d7d1bc9188a1d727e4,8.106231689453125e-06,False,"PPP prediction result:
+{
+  ""prediction"": 0.42,
+  ""confidence"": 0.15,
+  ""justification"": ""The target core idea resembles the better reference heuristic more than the weaker one, so the predicted objective is closer to the low objective range.""
+}
+"
+pop_0_op_e1_n10_251224_134701,bin_greedy,e1,0.3277,0.42,0.15,True,,mock,507c82662e576d69d59331d8eb00531a7f8f8f713356d7d7d1bc9188a1d727e4,8.106231689453125e-06,False,"PPP prediction result:
+{
+  ""prediction"": 0.42,
+  ""confidence"": 0.15,
+  ""justification"": ""The target core idea resembles the better reference heuristic more than the weaker one, so the predicted objective is closer to the low objective range.""
+}
+"
+pop_0_op_e1_n11_251224_134701,bin_greedy,e1,1.51534,0.42,0.15,True,,mock,507c82662e576d69d59331d8eb00531a7f8f8f713356d7d7d1bc9188a1d727e4,3.0994415283203125e-06,False,"PPP prediction result:
+{
+  ""prediction"": 0.42,
+  ""confidence"": 0.15,
+  ""justification"": ""The target core idea resembles the better reference heuristic more than the weaker one, so the predicted objective is closer to the low objective range.""
+}
+"
+pop_0_op_e1_n12_251224_134701,bin_greedy,e1,0.05815,0.42,0.15,True,,mock,507c82662e576d69d59331d8eb00531a7f8f8f713356d7d7d1bc9188a1d727e4,4.0531158447265625e-06,False,"PPP prediction result:
+{
+  ""prediction"": 0.42,
+  ""confidence"": 0.15,
+  ""justification"": ""The target core idea resembles the better reference heuristic more than the weaker one, so the predicted objective is closer to the low objective range.""
+}
+"
+pop_0_op_e1_n13_251224_134701,bin_greedy,e1,0.05755,0.42,0.15,True,,mock,507c82662e576d69d59331d8eb00531a7f8f8f713356d7d7d1bc9188a1d727e4,5.9604644775390625e-06,False,"PPP prediction result:
+{
+  ""prediction"": 0.42,
+  ""confidence"": 0.15,
+  ""justification"": ""The target core idea resembles the better reference heuristic more than the weaker one, so the predicted objective is closer to the low objective range.""
+}
+"
