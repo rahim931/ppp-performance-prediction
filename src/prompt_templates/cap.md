@@ -18,6 +18,6 @@ Heuristic Code:
 {code}
 ```
 Output format (JSON only, single object on last line):
-{
+{{
 "core_idea": "<concise abstraction>"
-}
+}}

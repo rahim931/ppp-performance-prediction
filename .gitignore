@@ -15,6 +15,7 @@ data/bin_greedy
 data/cvrp_lns
 data/premarshalling_astar
 data/puzzle_astar
+notebooks/Emirhan/outputs/
 
 # Operating System / Editor Files
 .DS_Store

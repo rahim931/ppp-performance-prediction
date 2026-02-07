@@ -146,7 +146,7 @@ def select_references_stratified(
       - candidate must have objective != None
       - candidate must not be exclude_id
     """
-    valid = []
+    valid: List[Tuple[float, Dict[str, Any]]] = []
     for r in candidates:
         hid = r.get("heuristic_id")
         obj = _to_float(r.get("objective"))
@@ -162,7 +162,6 @@ def select_references_stratified(
     if k <= 1:
         return [valid[0][1]]
 
-    # pick indices
     if len(valid) == 1:
         return [valid[0][1]]
 
@@ -176,7 +175,7 @@ def select_references_stratified(
     # If k > 3, fill additional refs evenly spaced
     if k > 3:
         step = max(1, len(valid) // k)
-        extra = []
+        extra: List[Dict[str, Any]] = []
         i = 0
         while len(extra) + 3 < k and i < len(valid):
             cand = valid[i][1]
@@ -187,7 +186,7 @@ def select_references_stratified(
         refs.extend(extra)
 
     # ensure uniqueness and cap to k
-    uniq = []
+    uniq: List[Dict[str, Any]] = []
     seen = set()
     for r in refs:
         hid = r.get("heuristic_id")
@@ -203,13 +202,13 @@ def build_references_block(refs: List[Tuple[str, float]]) -> str:
     refs: list of (core_idea, objective)
     Returns formatted text block inserted into ppp_with_refs.md as {references_block}.
     """
-    lines = []
+    lines: List[str] = []
     for i, (core, obj) in enumerate(refs, start=1):
         lines.append(f"{i})")
         lines.append("Core Idea:")
         lines.append(core)
         lines.append(f"Objective: {obj}")
-        lines.append("")  # blank line
+        lines.append("")
     return "\n".join(lines).strip() + "\n"
 
 
@@ -233,6 +232,7 @@ def run_ppp(
     include_raw_text: bool,
     temperature: float,
     max_tokens: int,
+    clamp_to_task_range: bool = True,   # NEW: enforce Variant A bounds
 ) -> None:
     template = load_template(template_path)
     cap_map = load_cap_map(cap_csv)
@@ -246,6 +246,7 @@ def run_ppp(
     skipped_filter = 0
     skipped_missing_cap = 0
     skipped_no_refs = 0
+    skipped_no_bounds = 0  # NEW
 
     # Pre-filter candidates once for reference selection by app type
     def row_passes_filters(r: Dict[str, Any]) -> bool:
@@ -274,6 +275,17 @@ def run_ppp(
             continue
         by_app.setdefault(str(app), []).append(r)
 
+    # NEW: compute task-global objective bounds per app type (Variant A)
+    task_bounds: Dict[str, Tuple[float, float]] = {}
+    for app, rows_app in by_app.items():
+        objs: List[float] = []
+        for rr in rows_app:
+            o = _to_float(rr.get("objective"))
+            if o is not None:
+                objs.append(o)
+        if len(objs) >= 2:
+            task_bounds[app] = (float(min(objs)), float(max(objs)))
+
     for r in filtered_rows:
         hid = r.get("heuristic_id")
         app = r.get("raw_app_type")
@@ -292,6 +304,13 @@ def run_ppp(
         if not target_core:
             skipped_missing_cap += 1
             continue
+
+        # NEW: get task bounds for this app type
+        bounds = task_bounds.get(str(app))
+        if bounds is None:
+            skipped_no_bounds += 1
+            continue
+        task_min, task_max = bounds
 
         # Reference selection within same app type
         candidates = by_app.get(str(app), [])
@@ -318,8 +337,11 @@ def run_ppp(
 
         references_block = build_references_block(refs_core_obj[:k_refs])
 
+        # NEW: pass task_min/task_max into template (Variant A)
         prompt = template.format(
             raw_app_type=str(app),
+            task_min=task_min,
+            task_max=task_max,
             references_block=references_block,
             target_core=target_core,
         )
@@ -333,6 +355,10 @@ def run_ppp(
         )
 
         pred, conf, ok, err, _extra = parse_ppp_response(resp.text)
+
+        # NEW: optionally clamp prediction to task range (guarantees Variant A constraint)
+        if clamp_to_task_range and pred is not None:
+            pred = max(task_min, min(task_max, pred))
 
         out_row = LLMResultRow(
             heuristic_id=str(hid),
@@ -369,6 +395,7 @@ def run_ppp(
     print(f"Skipped (filters/invalid): {skipped_filter}")
     print(f"Skipped (missing CAP core ideas): {skipped_missing_cap}")
     print(f"Skipped (not enough refs): {skipped_no_refs}")
+    print(f"Skipped (no task bounds): {skipped_no_bounds}")
     print(f"Output: {output_csv}")
 
 
@@ -404,6 +431,11 @@ def main() -> None:
     parser.add_argument("--temperature", type=float, default=0.2, help="LLM temperature")
     parser.add_argument("--max-tokens", type=int, default=512, help="LLM max_tokens")
     parser.add_argument("--use-mock", action="store_true", help="Use MockLLMClient (offline dev)")
+    parser.add_argument(
+        "--no-clamp",
+        action="store_true",
+        help="Disable clamping prediction into [task_min, task_max] after parsing (Variant A safety).",
+    )
 
     args = parser.parse_args()
     client = build_client(use_mock=args.use_mock)
@@ -423,6 +455,7 @@ def main() -> None:
         include_raw_text=args.include_raw_text,
         temperature=args.temperature,
         max_tokens=args.max_tokens,
+        clamp_to_task_range=(not args.no_clamp),
     )
 
 
