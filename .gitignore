@@ -23,3 +23,6 @@ Thumbs.db
 # Test Reports and Temporary Files
 *.log
 *.tmp
+
+#Cache
+artifacts/
