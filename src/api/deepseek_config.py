@@ -11,7 +11,7 @@ class DeepSeekConfig:
 def load_deepseek_config() -> DeepSeekConfig:
     base_url = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
     model = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
-    api_key = os.getenv("DEEPSEEK_API_KEY", "")
+    api_key = os.getenv("DEEPSEEK_API_KEY", "sk-19d82747043c4fa59494bc25d816f4fe")
 
     if not api_key:
         raise ValueError("Missing DEEPSEEK_API_KEY environment variable.")
