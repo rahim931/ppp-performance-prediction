@@ -1,0 +1,1476 @@
+﻿heuristic_id,raw_app_type,instance_scale,filename,strategy,algorithm,code,objective,task_name,parse_ok,is_timeout,objective_bin,group_id,app_type
+pop_8_op_m1_n11_251224_161205,bin_greedy,results_20251224_134317_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_8_op_m1_n11_251224_161205.json,m1,"The new algorithm calculates scores for each bin based on adjusted remaining capacity, weighted underutilization penalty, exponential near-fullness bonus, variance reduction factor, and normalized diversity factor to minimize the number of used bins while promoting balanced distribution.
+","import numpy as np
+
+def score(item, bins):
+    max_capacity = np.max(bins)
+    remaining_capacity = bins - item
+    adjusted_remaining_score = (remaining_capacity / max_capacity) ** 2
+    underutilization_penalty = np.log1p(1 / (remaining_capacity + 1e-5))
+    near_full_bonus = np.exp(-((max_capacity - bins) / max_capacity) ** 2)
+    variance_reduction_factor = 1 / (1 + np.var(bins[bins > item]))
+    normalized_diversity_factor = 1 / (1 + np.abs((bins - np.mean(bins)) / (np.max(bins) - np.min(bins))))
+    scores = adjusted_remaining_score + underutilization_penalty + near_full_bonus * variance_reduction_factor * normalized_diversity_factor
+    scores[bins == max_capacity] = -np.inf
+    return scores
+",0.03391,BinPacking,True,False,low,1,bin_greedy
+pop_17_op_m1_n17_251224_184025,bin_greedy,results_20251224_134317_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_17_op_m1_n17_251224_184025.json,m1,"The new algorithm calculates scores for each bin based on a combination of the remaining capacity's hyperbolic inverse, a penalty for bins that deviate from an optimal fill ratio adjusted by historical data trends, a reward for bins with a history of similar item sizes, and a normalization factor dynamically adjusted by the item size to ensure consistent scoring across different items.
+","import numpy as np
+
+def score(item, bins):
+    # Hyperbolic inverse of remaining capacity
+    hyperbolic_inverse_capacity = 1 / (bins - item + 1e-5)
+    
+    # Penalty for bins that deviate from an optimal fill ratio adjusted by historical data trends
+    max_capacity = np.max(bins)
+    optimal_fill_ratio_trend = 0.4 * (1 + np.sin(np.pi * np.random.rand() / 2))  # Example trend adjustment
+    deviation_penalty = np.abs((bins - item) / max_capacity - optimal_fill_ratio_trend) / (optimal_fill_ratio_trend + 1e-5)
+    
+    # Reward for bins with a history of similar item sizes (simulated by random similarity score)
+    recent_item_sizes = np.random.randint(1, 10, size=bins.shape[0])  # Simulated recent item sizes
+    similarity_score = np.exp(-np.mean((recent_item_sizes - item) ** 2) * 0.5)
+    
+    # Normalization factor dynamically adjusted by the item size
+    dynamic_normalization_factor = (item + 1) / (max_capacity + 1e-5)
+    
+    # Combine factors into a single score
+    scores = hyperbolic_inverse_capacity - deviation_penalty + similarity_score * dynamic_normalization_factor
+    
+    return scores
+",0.17074,BinPacking,True,False,mid,2,bin_greedy
+pop_0_op_i1_n4_251225_020904,bin_greedy,results_20251225_020644_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_0_op_i1_n4_251225_020904.json,i1,"The algorithm assigns scores to bins based on their remaining capacity relative to the item size, penalizing larger empty spaces to encourage tighter packing while avoiding full bins.
+","import numpy as np
+
+def score(item, bins):
+    # Calculate base score as inverse of the difference between bin and item size
+    base_scores = 1 / (bins - item)
+    # Penalize larger capacities by a factor proportional to their remaining space
+    penalty_factor = np.exp(-0.5 * bins)
+    scores = base_scores * penalty_factor
+    return scores
+",0.03984,BinPacking,True,False,low,3,bin_greedy
+pop_8_op_e2_n3_251225_042810,bin_greedy,results_20251225_020644_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_8_op_e2_n3_251225_042810.json,e2,"The new algorithm calculates scores for bins based on a weighted combination of the remaining capacity's logarithmic inverse, a cubic penalty for underutilized bins relative to the median, an arctangent reward for bins closer to being half full, and a harmonic series adjustment for recent usage frequency, with optimized weights.
+","import numpy as np
+
+def score(item, bins):
+    # Calculate the remaining capacities
+    remaining_capacities = bins - item
+    
+    # Logarithmic inverse of remaining capacities to prioritize bins with larger remaining spaces
+    log_inverse_capacity_scores = np.log(1 + 1 / (remaining_capacities + 1e-6))
+    
+    # Cubic penalty for underutilized bins relative to the median
+    median_fill_level = np.median(bins)
+    underutilization_penalty = ((remaining_capacities - median_fill_level) ** 3) / (median_fill_level ** 3)
+    
+    # Arctangent reward for bins closer to being half full
+    optimal_fill_bonus = np.arctan((bins - item) - bins / 2) * 2 / np.pi
+    
+    # Recent usage frequency adjustment using a harmonic series (assuming a static recent_usage array for demonstration)
+    recent_usage = np.random.rand(len(bins))  # This should be replaced with actual recent usage data
+    usage_adjustment = np.sum(1 / (np.arange(1, len(bins) + 1) * (recent_usage + 0.1)))
+    
+    # Combine scores with weights
+    scores = log_inverse_capacity_scores - underutilization_penalty + optimal_fill_bonus + usage_adjustment
+    
+    return scores
+",0.02294,BinPacking,True,False,low,4,bin_greedy
+pop_3_op_m2_n9_251224_202201,bin_greedy,results_20251224_192233_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_3_op_m2_n9_251224_202201.json,m2,"The new algorithm calculates scores for each bin based on remaining capacity, uses a sigmoid decay factor to penalize larger empty spaces, incorporates a penalty for bins with many items, and adjusts for uneven distribution of item sizes using an inverse variance term.
+","import numpy as np
+
+def score(item, bins):
+    max_capacity = 10  # Assuming maximum bin capacity is 10
+    remaining_capacity = bins - item
+    sigmoid_decay_factor = 1 / (1 + np.exp(-(remaining_capacity / (max_capacity - item + 1e-6))))
+    num_items_in_bin = (max_capacity - bins) // item
+    items_penalty = 1 / np.log2(num_items_in_bin + 3)
+    distribution_variance = np.var(bins) + 1e-6
+    distribution_penalty = 1 / distribution_variance ** 0.5
+    scores = remaining_capacity * sigmoid_decay_factor * items_penalty * distribution_penalty
+    return scores
+",0.21431,BinPacking,True,False,mid,5,bin_greedy
+pop_0_op_i1_n13_251224_192433,bin_greedy,results_20251224_192233_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_0_op_i1_n13_251224_192433.json,i1,"The new algorithm calculates scores for each bin based on a combination of its remaining capacity, the difference between the item size and the bin's remaining capacity, and a penalty for bins with higher initial capacities to encourage filling smaller bins first.
+","import numpy as np
+
+def score(item, bins):
+    # Calculate the initial score based on remaining capacity
+    initial_scores = bins - item
+    
+    # Penalize bins with larger initial capacities
+    penalties = bins / (np.max(bins) + 1e-6)
+    
+    # Consider the difference between bin capacity and item size
+    differences = np.abs(bins - item)
+    
+    # Combine scores, penalties, and differences
+    scores = initial_scores - penalties * differences
+    
+    return scores
+",0.14418,BinPacking,True,False,mid,6,bin_greedy
+pop_17_op_e1_n2_251224_183126,bin_greedy,results_20251224_134317_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_17_op_e1_n2_251224_183126.json,e1,"The new algorithm calculates scores for each bin based on the weighted sum of an exponential decay factor for remaining capacity, a penalty for bins that deviate from the median usage pattern, a bonus for bins with low variance in recent activity, and a normalization term adjusted by item size to ensure consistent scoring.
+","import numpy as np
+
+def score(item, bins):
+    # Exponential decay factor for remaining capacity
+    exponential_decay_capacity = np.exp(-(bins - item) * 0.1)
+    
+    # Penalty for bins that deviate from the median usage pattern
+    median_usage = np.median(bins)
+    deviation_penalty = np.abs((bins - item) - (median_usage / 2)) ** 2 / (median_usage ** 2 + 1e-5)
+    
+    # Bonus for bins with low variance in recent activity
+    recent_activity = np.random.rand(*bins.shape)
+    low_variance_bonus = np.exp(-np.var(recent_activity) * 10.0)
+    
+    # Normalization term adjusted by item size to ensure consistent scoring
+    normalization_factor = (item + 1) / (np.max(bins) + 1e-5)
+    
+    # Combine factors into a single score
+    scores = exponential_decay_capacity - deviation_penalty + low_variance_bonus * normalization_factor
+    
+    return scores
+",0.03984,BinPacking,True,False,low,7,bin_greedy
+pop_0_op_i1_n12_251225_020644,bin_greedy,results_20251225_020644_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_0_op_i1_n12_251225_020644.json,i1,"The new algorithm calculates scores for each bin based on a weighted combination of the remaining capacity, the potential fragmentation it would cause, and an inverse logarithmic factor to prefer bins with more available space.
+","import numpy as np
+
+def score(item, bins):
+    # Calculate the remaining capacity after placing the item in each bin
+    remaining_capacity = bins - item
+    
+    # Calculate potential fragmentation (difference between current bin size and next smaller multiple of item size)
+    fragmentation = bins % item
+    
+    # Calculate inverse logarithmic factor to prefer larger capacities
+    log_factor = np.log(bins + 1) ** -1
+    
+    # Combine scores using a weighted sum
+    scores = remaining_capacity * 0.6 - fragmentation * 0.3 + log_factor * 0.1
+    
+    return scores
+",1.51534,BinPacking,True,False,high,8,bin_greedy
+pop_19_op_m2_n16_251225_020114,bin_greedy,results_20251224_192233_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_19_op_m2_n16_251225_020114.json,m2,"The new algorithm calculates scores for each bin based on an adjusted inverse capacity, a penalty for deviation from an optimal fill ratio using a quartic function, and a bonus for bins with fewer items, normalized using a hyperbolic tangent transformation to ensure self-consistency.
+","import numpy as np
+
+def score(item, bins):
+    # Calculate the adjusted inverse of rest capacity
+    inv_capacity = 1 / (bins - item) ** 2
+    
+    # Calculate deviation from optimal fill ratio using a quartic penalty
+    optimal_fill_ratio = 0.75 * np.max(bins)
+    quart_deviation_penalty = -(bins - optimal_fill_ratio) ** 4 / (0.25 * np.max(bins)) ** 4
+    
+    # Assuming we have an array `usage_counts` that tracks how many items are already in each bin
+    usage_counts = np.random.randint(0, 10, size=bins.shape)
+    item_count_bonus = -np.abs(usage_counts - np.mean(usage_counts))
+    
+    # Combine all factors with weights and apply hyperbolic tangent transformation for normalization
+    scores = 0.6 * inv_capacity + 0.3 * quart_deviation_penalty + 0.1 * item_count_bonus
+    tanh_scores = np.tanh(scores)
+    
+    return tanh_scores
+",0.01006,BinPacking,True,False,low,9,bin_greedy
+pop_1_op_m1_n17_251225_023309,bin_greedy,results_20251225_020644_bp_online_qwen25coder32b_ueFalse_uiFalse_uitypeNone,program_pop_1_op_m1_n17_251225_023309.json,m1,"The new algorithm calculates scores for bins based on a weighted combination of exponential decay of remaining capacity, a penalty for underutilized bins using an inverse hyperbolic tangent, and a bonus for bins closer to being half full, ensuring efficient use of space while minimizing fragmentation.
+","import numpy as np
+
+def score(item, bins):
+    # Calculate the remaining capacities
+    remaining_capacities = bins - item
+    
+    # Exponential decay of remaining capacities to prioritize bins with larger remaining spaces
+    exponential_decay_scores = np.exp(-remaining_capacities / np.max(bins))
+    
+    # Penalty for underutilized bins (bins with large remaining capacity) using inverse hyperbolic tangent
+    underutilization_penalty = 1 / (np.arctanh(remaining_capacities / np.max(bins)) + 2)
+    
+    # Bonus for bins closer to being half full
+    optimal_fill_bonus = 1 - np.abs((bins - item) - bins / 2) / (bins / 2)
+    
+    # Combine scores with weights
+    scores = exponential_decay_scores * underutilization_penalty + optimal_fill_bonus
+    
+    return scores
+",0.30033,BinPacking,True,False,high,10,bin_greedy
+pop_17_op_m2_n13_251228_014656,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_17_op_m2_n13_251228_014656.json,m2,"A diversified-score destroyer that reduces emphasis on route length, boosts per-node demand influence, and uses mean-distance attenuation with controlled jitter, then removes a small random fraction of the top-scoring removable nodes.
+","def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+    scores = []
+    total_non_dep = 0
+
+    # New parameter settings (alternative)
+    ALPHA = 0.35          # influence of route length (L-1)
+    BETA = 0.30           # weight for per-node demand relative to route demand
+    ATTENUATION_FACTOR = 0.8  # attenuation based on mean distance
+    JITTER_SCALE = 0.25     # diversification jitter
+
+    for route in current_solution:
+        non_dep = [n for n in route if n != 0]
+        L = len(non_dep)
+        total_non_dep += L
+
+        if L == 0:
+            continue
+
+        # Compute total route demand
+        route_demand = 0.0
+        for n in non_dep:
+            if n < len(demands):
+                route_demand += demands[n]
+
+        for idx, node in enumerate(non_dep):
+            prev_node = non_dep[idx - 1] if idx > 0 else None
+            next_node = non_dep[idx + 1] if idx < L - 1 else None
+
+            # Local saving term
+            saving = 0.0
+            if prev_node is not None and next_node is not None:
+                saving = (distance_matrix[prev_node][node]
+                          + distance_matrix[node][next_node]
+                          - distance_matrix[prev_node][next_node])
+                if saving < 0.0:
+                    saving = 0.0
+            else:
+                # End-node bonus proportional to the edge length
+                if prev_node is not None:
+                    saving = 0.08 * distance_matrix[prev_node][node]
+                elif next_node is not None:
+                    saving = 0.08 * distance_matrix[node][next_node]
+                else:
+                    saving = 0.0
+
+            # Mean distance to other nodes in the same route
+            mean_distance = 0.0
+            if L > 1:
+                s = 0.0
+                for other in non_dep:
+                    if other == node:
+                        continue
+                    s += distance_matrix[node][other]
+                mean_distance = s / (L - 1)
+            else:
+                mean_distance = 0.0
+
+            demand = demands[node] if node < len(demands) else 0.0
+
+            score = saving * (1.0 + ALPHA * (L - 1))
+
+            if route_demand > 0.0:
+                score += BETA * (demand / route_demand)
+
+            attenuation = 1.0 / (1.0 + mean_distance * ATTENUATION_FACTOR)
+            score *= attenuation
+
+            perturb = rng.random() * JITTER_SCALE * (saving + mean_distance + 1.0)
+            score += perturb
+
+            if score < 0.0:
+                score = 0.0
+
+            scores.append((node, score))
+
+    if total_non_dep == 0:
+        k = 0
+    else:
+        frac = 0.08 + rng.random() * 0.12
+        k = max(1, int(round(total_non_dep * frac)))
+        if k > total_non_dep:
+            k = total_non_dep
+
+    return scores, k
+",3405423.7,CVRP,True,False,low,1,cvrp_lns
+pop_4_op_m1_n7_251226_051356,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_4_op_m1_n7_251226_051356.json,m1,"Select a per-route center node (the node with minimal sum of distances to other non-depot nodes in that route), score each non-depot node by (distance to that center) raised to 1.3, multiplied by a route-size factor that grows nonlinearly with route length, then divided by (1 + 0.6 * demand of the node), add a small random perturbation, and remove the top-k nodes where k is a small random fraction of all non-depot nodes.
+","def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+    
+    scores = []
+    total_non_dep = 0
+
+    for route in current_solution:
+        non_dep = [n for n in route if n != 0]
+        L = len(non_dep)
+        if L == 0:
+            continue
+
+        total_non_dep += L
+
+        # Determine route center: node with minimal sum of distances to other non-depots in the route
+        best_center = None
+        best_sum = None
+        for c in non_dep:
+            s = 0.0
+            for other in non_dep:
+                if other == c:
+                    continue
+                s += distance_matrix[c][other]
+            if best_sum is None or s < best_sum:
+                best_sum = s
+                best_center = c
+
+        # Route-size factor (nonlinear growth with route length)
+        factor = 1.0 + 0.30 * ((L - 1) ** 0.75)
+
+        for node in non_dep:
+            dist_to_center = distance_matrix[node][best_center] if best_center is not None else 0.0
+            demand = demands[node] if node < len(demands) else 0
+
+            # Score: distance to center raised to 1.3, scaled by route size, damped by demand
+            score = (dist_to_center ** 1.3) * factor
+            score /= (1.0 + 0.6 * demand)
+
+            # Small random perturbation
+            perturb = rng.random() * 0.04 * (dist_to_center + 1.0)
+            score += perturb
+
+            scores.append((node, score))
+
+    if total_non_dep == 0:
+        k = 0
+    else:
+        frac = 0.12 + rng.random() * 0.08  # between 0.12 and 0.20
+        k = max(1, int(round(total_non_dep * frac)))
+        if k > total_non_dep:
+            k = total_non_dep
+
+    return scores, k
+",3581952.6,CVRP,True,False,mid,2,cvrp_lns
+pop_4_op_m1_n6_251226_051356,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_4_op_m1_n6_251226_051356.json,m1,"A diversification-driven destruction scoring that reserves a different balance by selecting nodes based on (i) adjusted detour savings, (ii) a non-linear demand bonus tied to a logistic-like slack factor, (iii) a center-distance centrality bonus emphasizing removal of nodes far from the route centroid, and (iv) randomized jitter, then removes a small randomized set of top-scoring nodes.
+","def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+    vehicle_caps = data.get('vehicle_capacities', [])
+    cap = max(vehicle_caps) if vehicle_caps else 0
+
+    scores = []
+    total_nodes = 0
+
+    for route in current_solution:
+        if not route:
+            continue
+        route_nodes = [n for n in route if n is not None and n != 0]
+        m = len(route_nodes)
+        if m == 0:
+            continue
+
+        # compute total demand on this route
+        route_demand = 0
+        for node in route_nodes:
+            if node < len(demands):
+                route_demand += demands[node]
+
+        # determine a route center as the node with maximum sum of distances to others (dim once)
+        center_node = None
+        if len(route_nodes) >= 2:
+            best_sum = None
+            for cand in route_nodes:
+                s = 0
+                for other in route_nodes:
+                    if other == cand:
+                        continue
+                    s += distance_matrix[cand][other]
+                if best_sum is None or s > best_sum:
+                    best_sum = s
+                    center_node = cand
+        elif len(route_nodes) == 1:
+            center_node = route_nodes[0]
+
+        for idx, node in enumerate(route_nodes):
+            total_nodes += 1
+
+            # Local detour savings if removing this node
+            if m == 1:
+                savings = 0.0
+            elif idx == 0:
+                next_node = route_nodes[1]
+                savings = distance_matrix[node][next_node]
+            elif idx == m - 1:
+                prev_node = route_nodes[idx - 1]
+                savings = distance_matrix[prev_node][node]
+            else:
+                prev_node = route_nodes[idx - 1]
+                next_node = route_nodes[idx + 1]
+                savings = (distance_matrix[prev_node][node] +
+                           distance_matrix[node][next_node] -
+                           distance_matrix[prev_node][next_node])
+
+            # route slack and logistic-like factor based on slack
+            slack = cap - route_demand
+            if slack < 0:
+                slack = 0
+            exponent = -0.95 * (slack - (cap * 0.6 if cap else 0.0))
+            factor = 1.0 / (1.0 + (2.718281828 ** exponent))
+
+            # demand based bonus
+            demand = demands[node] if node < len(demands) else 0
+            demand_bonus = (demand ** 0.88) * factor * 0.72
+
+            # jitter for diversification
+            jitter = (rng.random() * 0.6) - 0.3  # in [-0.3, 0.3)
+
+            # route-centroid based centrality bonus (prefer removing nodes far from center)
+            center_dist = distance_matrix[node][center_node] if center_node is not None else 0.0
+            centrality_bonus = (center_dist ** 0.62) * 0.58
+
+            score = savings * 0.62 + demand_bonus + centrality_bonus + jitter
+            scores.append((node, score))
+
+    max_k = max(1, total_nodes // 5) if total_nodes > 0 else 0
+    if total_nodes == 0:
+        k = 0
+    else:
+        k = int(rng.integers(1, max_k + 1))
+
+    return scores, k
+",3570590.5,CVRP,True,False,low,3,cvrp_lns
+pop_19_op_e2_n12_251228_065631,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_19_op_e2_n12_251228_065631.json,e2,"Assign each non-depot node a score computed from (i) a local disruption term for cutting its predecessor-successor connection, (ii) its distance to the route centroid as a diversification factor, and (iii) an inverse relation to the node's share of route demand, all combined multiplicatively with a small random perturbation; remove a small random fraction of top-scoring nodes.
+","def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+    scores = []
+    total_non_dep = 0
+
+    for route in current_solution:
+        non_dep = [n for n in route if n != 0]
+        L = len(non_dep)
+        total_non_dep += L
+
+        if L == 0:
+            continue
+
+        # Compute route total demand
+        route_demand = 0.0
+        for n in non_dep:
+            if n < len(demands):
+                route_demand += demands[n]
+
+        # Compute route centroid (node with minimal sum of distances to others)
+        centroid = non_dep[0] if L > 0 else 0
+        if L > 0:
+            best_sum = None
+            for c in non_dep:
+                s = 0.0
+                for t in non_dep:
+                    if t == c:
+                        continue
+                    s += distance_matrix[c][t]
+                if best_sum is None or s < best_sum:
+                    best_sum = s
+                    centroid = c
+
+        for idx, node in enumerate(non_dep):
+            prev_node = non_dep[idx - 1] if idx > 0 else None
+            next_node = non_dep[idx + 1] if idx < L - 1 else None
+
+            # removal_cost: disruption if removing node connects two segments
+            removal_cost = 0.0
+            if prev_node is not None and next_node is not None:
+                removal_cost = (distance_matrix[prev_node][node]
+                                + distance_matrix[node][next_node]
+                                - distance_matrix[prev_node][next_node])
+                if removal_cost < 0.0:
+                    removal_cost = 0.0
+
+            # mean distance to others (diversification signal)
+            mean_distance_to_others = 0.0
+            if L > 1:
+                s = 0.0
+                for other in non_dep:
+                    if other == node:
+                        continue
+                    s += distance_matrix[node][other]
+                mean_distance_to_others = s / (L - 1)
+            else:
+                mean_distance_to_others = 0.0
+
+            # node-specific metrics
+            node_demand = demands[node] if node < len(demands) else 0.0
+            centroid_distance = distance_matrix[node][centroid] if len(distance_matrix) > 0 else 0.0
+
+            relative_demand = node_demand / route_demand if route_demand > 0.0 else 0.0
+
+            # new scoring formula (multiplicative with normalization)
+            base = 1.0 + removal_cost
+            attenuation = 1.0 / (1.0 + centroid_distance + mean_distance_to_others)
+
+            score = base * (1.0 - relative_demand) * attenuation
+
+            # jitter to diversify removals
+            perturb = rng.random() * 0.12 * (removal_cost + centroid_distance + 1.0)
+            score += perturb
+
+            if score < 0.0:
+                score = 0.0
+
+            scores.append((node, score))
+
+    if total_non_dep == 0:
+        k = 0
+    else:
+        frac = 0.05 + rng.random() * 0.15  # 5% to 20%
+        k = max(1, int(round(total_non_dep * frac)))
+        if k > total_non_dep:
+            k = total_non_dep
+
+    return scores, k
+",3466336.2,CVRP,True,False,low,4,cvrp_lns
+pop_14_op_m2_n0_251227_152817,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_14_op_m2_n0_251227_152817.json,m2,"New LNS destroy scoring: for each non-depot node, compute a node score using the node's minimum intra-route distance to peers with a route-length-based diversity term, a stronger remaining-capacity penalty, and RNG perturbation; then remove the top-k scored nodes, where k is a random fraction of non-depot nodes.
+","def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+    vehicle_capacities = data.get('vehicle_capacities', [])
+
+    scores = []
+    total_non_dep = 0
+
+    for r_idx, route in enumerate(current_solution):
+        non_dep = [n for n in route if n != 0]
+        L = len(non_dep)
+        if L == 0:
+            continue
+
+        total_non_dep += L
+
+        capacity = vehicle_capacities[r_idx] if r_idx < len(vehicle_capacities) else 0
+        route_demand = sum(demands[node] if node < len(demands) else 0 for node in non_dep)
+        if capacity > 0:
+            remaining_ratio = (capacity - route_demand) / capacity
+            if remaining_ratio < 0.0:
+                remaining_ratio = 0.0
+            if remaining_ratio > 1.0:
+                remaining_ratio = 1.0
+        else:
+            remaining_ratio = 0.0
+
+        # New: slower-growing diversity term with different parameters
+        diversity = 1.0 + 0.02 * (L ** 1.4)
+
+        for node in non_dep:
+            if L > 1:
+                min_dist = min(distance_matrix[node][other] for other in non_dep if other != node)
+            else:
+                min_dist = 0.0
+
+            node_demand = demands[node] if node < len(demands) else 0
+            # Stronger emphasis on remaining capacity
+            load_factor = 1.0 + 0.7 * (1.0 - remaining_ratio)
+
+            score = (min_dist ** 1.5) * diversity * load_factor
+            score /= (1.0 + 0.4 * node_demand)
+
+            perturb = rng.random() * 0.08 * (min_dist + 1.0)
+            score += perturb
+
+            scores.append((node, score))
+
+    if total_non_dep == 0:
+        k = 0
+    else:
+        frac = 0.15 + rng.random() * 0.25  # between 0.15 and 0.40
+        k = max(1, int(round(total_non_dep * frac)))
+        if k > total_non_dep:
+            k = total_non_dep
+
+    return scores, k
+",3659070.4,CVRP,True,False,mid,5,cvrp_lns
+pop_0_op_i1_n19_251225_141156,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_0_op_i1_n19_251225_141156.json,i1,"Score each customer by the potential distance saving from removing it (based on its route predecessor and successor), adjust by demand and a small random factor, then remove the top-k highest-scoring customers where k is a small fraction of all customers currently in the solution.}
+","def destroy_scoring(current_solution, data, rng):
+    dist = data['distance_matrix']
+    demands = data.get('demands', [])
+    
+    # Collect candidate nodes with their context (predecessor p and successor s within the same route)
+    node_context = {}  # node -> (p, s)
+    total_nodes = 0
+    for route in current_solution:
+        for idx, node in enumerate(route):
+            if node == 0:
+                continue
+            total_nodes += 1
+            p = route[idx - 1] if idx - 1 >= 0 else 0
+            s = route[idx + 1] if idx + 1 < len(route) else 0
+            node_context[node] = (p, s)
+    
+    # Compute scores for each node
+    scores = []
+    for node, (p, s) in node_context.items():
+        # Distances with boundary checks
+        dist_p_i = dist[p][node] if p < len(dist) and node < len(dist[p]) else dist[0][node]
+        dist_i_s = dist[node][s] if node < len(dist) and s < len(dist[node]) else dist[node][0]
+        dist_p_s = dist[p][s] if (p < len(dist) and s < len(dist[p])) else dist[0][0]
+        removal_gain = dist_p_i + dist_i_s - dist_p_s  # distance saved by removing this node
+        demand = demands[node] if node < len(demands) else 0
+        # Score favors larger potential savings and slightly penalizes high demand, with a small random factor
+        score = removal_gain - 0.01 * demand
+        score += rng.random() * 0.05 * (removal_gain + 1e-9)
+        scores.append((node, score))
+    
+    # Determine k: number of nodes to remove
+    if total_nodes == 0:
+        k = 0
+    else:
+        fractions = [0.15, 0.20, 0.25]
+        fr = fractions[int(rng.integers(0, len(fractions)))]
+        k = max(1, int(round(total_nodes * fr)))
+        if k > total_nodes:
+            k = total_nodes
+    
+    return scores, k
+",3729041.2,CVRP,True,False,mid,6,cvrp_lns
+pop_2_op_e1_n9_251225_213311,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_2_op_e1_n9_251225_213311.json,e1,"Introduce a disruption-potential scoring that computes, for every non-depot node, its local removal savings, its connectivity strength within the route (sum of distances to all other nodes in the same route), and its route load and demand, then combine these with route-wide maxima to produce a multiplicative, diversified score; finally, remove k highest-scoring nodes.
+","import math
+
+def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+    
+    temp = []  # store per-node interim data: [node, savings, sum_dist, demand, endpoint, route_load]
+    total_nodes = 0
+    max_route_load = 0
+
+    # First pass: compute per-node metrics and route loads
+    for route in current_solution:
+        if not route:
+            continue
+        non_dep_nodes = [n for n in route if n is not None and n != 0]
+        m = len(non_dep_nodes)
+        if m == 0:
+            continue
+
+        # compute route load
+        route_load = 0
+        for node in non_dep_nodes:
+            if 0 <= node < len(demands):
+                route_load += demands[node]
+        if route_load > max_route_load:
+            max_route_load = route_load
+
+        for idx, node in enumerate(non_dep_nodes):
+            total_nodes += 1
+
+            # local savings for removing this node
+            if m == 1:
+                savings = 0.0
+            elif idx == 0:
+                next_node = non_dep_nodes[1]
+                savings = distance_matrix[node][next_node]
+            elif idx == m - 1:
+                prev_node = non_dep_nodes[idx - 1]
+                savings = distance_matrix[prev_node][node]
+            else:
+                prev_node = non_dep_nodes[idx - 1]
+                next_node = non_dep_nodes[idx + 1]
+                savings = (distance_matrix[prev_node][node] +
+                           distance_matrix[node][next_node] -
+                           distance_matrix[prev_node][next_node])
+
+            # connectivity strength: sum of distances to all other nodes in the route
+            sum_dist = 0.0
+            for other in non_dep_nodes:
+                if other == node:
+                    continue
+                sum_dist += distance_matrix[node][other]
+
+            # node demand
+            demand = demands[node] if 0 <= node < len(demands) else 0
+
+            endpoint = (idx == 0 or idx == m - 1)
+
+            temp.append([node, savings, sum_dist, demand, endpoint, route_load])
+
+    if total_nodes == 0:
+        k = 0
+        return [], k
+
+    # Second pass: compute global maxima needed for normalization
+    if temp:
+        max_sum_dist = max(item[2] for item in temp)
+        max_demand = max(demands) if demands else 0
+        max_route_load_local = max_route_load
+    else:
+        max_sum_dist = 0.0
+        max_demand = 0
+        max_route_load_local = max_route_load
+
+    # Build final scores
+    scores = []
+    for item in temp:
+        node, savings, sum_dist, demand, endpoint, route_load = item
+
+        centrality_factor = 0.5 + 0.5 * (sum_dist / max_sum_dist) if max_sum_dist > 0 else 1.0
+        demand_factor = 0.5 + 0.5 * (demand / max_demand) if max_demand > 0 else 1.0
+        route_load_factor = 1.0 + (route_load / max_route_load_local) if max_route_load_local > 0 else 1.0
+
+        score = savings * centrality_factor * demand_factor * route_load_factor
+        score += rng.random() * 0.0005  # small jitter for diversification
+
+        scores.append((node, score))
+
+    # Determine k
+    if total_nodes == 0:
+        k = 0
+    else:
+        max_k = max(1, int(total_nodes * 0.25))
+        k = int(rng.integers(1, max_k + 1))
+
+    return scores, k
+",3550734.5,CVRP,True,False,low,7,cvrp_lns
+pop_0_op_i1_n3_251225_145628,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_0_op_i1_n3_251225_145628.json,i1,"Compute a per-node destruction score as a weighted sum of its estimated marginal route-length impact when removed (based on its predecessor and successor) and its demand, and then remove the top-k highest-scoring nodes in the LNS destroy phase, with k chosen as a fixed fraction of the total nodes.}
+","def destroy_scoring(current_solution, data, rng):
+    distance = data['distance_matrix']
+    demands = data['demands']
+
+    scores_dict = {}
+    for route in current_solution:
+        for idx, node in enumerate(route):
+            pred = route[idx - 1] if idx > 0 else None
+            succ = route[idx + 1] if idx < len(route) - 1 else None
+
+            if pred is not None and succ is not None:
+                delta = distance[pred][node] + distance[node][succ] - distance[pred][succ]
+            elif pred is not None:
+                delta = distance[pred][node]
+            elif succ is not None:
+                delta = distance[node][succ]
+            else:
+                delta = 0.0
+
+            d = demands[node] if node < len(demands) else 0
+            score = delta * 1.0 + d * 0.5
+
+            if node in scores_dict:
+                if score > scores_dict[node]:
+                    scores_dict[node] = score
+            else:
+                scores_dict[node] = score
+
+    total_nodes = len(scores_dict)
+    if total_nodes == 0:
+        return [], 0
+
+    temp = []
+    for node, sc in scores_dict.items():
+        temp.append((node, sc, rng.random()))
+    temp.sort(key=lambda x: (-x[1], x[2]))
+    scores = [(node, sc) for node, sc, _ in temp]
+
+    k = max(1, int(0.25 * total_nodes))
+    return scores, k
+",3852077.6,CVRP,True,False,high,8,cvrp_lns
+pop_5_op_e1_n11_251226_064644,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_5_op_e1_n11_251226_064644.json,e1,"Compute a dispersion-based, route-aware destruction score for each non-depot node using its intra-route average distance to peers, the distance to the nearest anchor in other routes, a slack/demand adjustment, and a small jitter, then remove the top-k highest-scoring nodes where k scales with the total candidates to diversify destruction.
+","def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+    vehicle_caps = data.get('vehicle_capacities', [])
+    cap = max(vehicle_caps) if vehicle_caps else 0
+
+    # Build anchors: first non-depot node in each route
+    anchors = []
+    for route in current_solution:
+        anchor = None
+        if route:
+            for node in route:
+                if node is not None and node != 0:
+                    anchor = node
+                    break
+        anchors.append(anchor)
+
+    scores = []
+    total_nodes = 0
+
+    for ri, route in enumerate(current_solution):
+        if not route:
+            continue
+
+        # Non-depot nodes in this route
+        non_dep = [n for n in route if (n is not None and n != 0)]
+        m = len(non_dep)
+        if m == 0:
+            continue
+
+        # Route demand
+        route_demand = 0
+        for n in non_dep:
+            if n < len(demands):
+                route_demand += demands[n]
+
+        for idx, node in enumerate(non_dep):
+            total_nodes += 1
+
+            # Intra-route dispersion: average distance to other non-depot nodes in this route
+            if m <= 1:
+                intra_avg = 0.0
+            else:
+                s = 0.0
+                for other in non_dep:
+                    if other == node:
+                        continue
+                    if node < len(distance_matrix) and other < len(distance_matrix[node]):
+                        d = distance_matrix[node][other]
+                    else:
+                        d = 0.0
+                    s += d
+                intra_avg = s / (m - 1)
+
+            # Anchor distance: distance to nearest anchor in other routes
+            anchor_dist = None
+            for aj, anchor in enumerate(anchors):
+                if aj == ri:
+                    continue
+                if anchor is None:
+                    continue
+                if node < len(distance_matrix) and anchor < len(distance_matrix[node]):
+                    d = distance_matrix[node][anchor]
+                else:
+                    d = 0.0
+                if anchor_dist is None or d < anchor_dist:
+                    anchor_dist = d
+            anchor_term = anchor_dist if anchor_dist is not None else 0.0
+
+            # Demand term
+            demand = demands[node] if node < len(demands) else 0
+
+            # Slack (route pressure)
+            slack = cap - route_demand
+            if slack < 0:
+                slack = 0
+            ratio_slack = (slack / cap) if cap > 0 else 0.0
+
+            # Small jitter for diversification
+            jitter = (rng.random() * 0.15) - 0.075
+
+            # Composite score (higher means more likely to be removed)
+            score = (0.45 * intra_avg) + (0.30 * anchor_term) + (0.15 * (1.0 / (1.0 + demand))) + (0.10 * (1.0 - ratio_slack)) + jitter
+
+            scores.append((node, score))
+
+    if total_nodes == 0:
+        k = 0
+    else:
+        # Choose a diversification-friendly fraction of nodes to remove
+        frac = 0.25 + rng.random() * 0.35  # between 0.25 and 0.60
+        max_k = max(1, total_nodes // 2)
+        k = int(rng.integers(1, max_k + 1))
+        if k > total_nodes:
+            k = total_nodes
+
+    return scores, k
+",3808717.5,CVRP,True,False,mid,9,cvrp_lns
+pop_1_op_m1_n0_251225_200231,cvrp_lns,results_20251225_141130_lns_cvrp_gpt5nano20250807_ueFalse_uiFalse_uitypeNone,program_pop_1_op_m1_n0_251225_200231.json,m1,"New heuristic computes a node-specific novelty score by measuring the spread of distances to a small random peer sample within its route and the peer-demand dispersion, then adds jitter and selects a random fraction of top-scoring nodes for destruction.
+","def destroy_scoring(current_solution, data, rng):
+    distance_matrix = data['distance_matrix']
+    demands = data.get('demands', [])
+
+    scores = []
+    total_nodes = 0
+
+    for route in current_solution:
+        non_dep = [n for n in route if n != 0]
+        if not non_dep:
+            continue
+        total_nodes += len(non_dep)
+
+        for i, node_i in enumerate(non_dep):
+            peers = non_dep[:i] + non_dep[i+1:]
+            if not peers:
+                continue
+
+            sample_size = min(5, len(peers))
+            sample_indices = rng.choice(len(peers), size=sample_size, replace=False)
+
+            dist_vals = []
+            dem_peer_vals = []
+            dem_i = demands[node_i] if node_i < len(demands) else 0
+
+            for si in sample_indices:
+                peer = peers[int(si)]
+                dist = 0.0
+                if node_i < len(distance_matrix) and peer < len(distance_matrix[node_i]):
+                    dist = distance_matrix[node_i][peer]
+                dist_vals.append(dist)
+                dem_peer_vals.append(demands[peer] if peer < len(demands) else 0)
+
+            if not dist_vals:
+                continue
+
+            d_min = min(dist_vals)
+            d_max = max(dist_vals)
+            d_mean = sum(dist_vals) / len(dist_vals)
+            dem_mean = sum(dem_peer_vals) / len(dem_peer_vals) if dem_peer_vals else 0.0
+
+            score = (d_max - d_min) / (d_mean + 1.0) + abs(dem_i - dem_mean) / (dem_mean + 1.0)
+
+            jitter = rng.random() * 0.01 * (score + 1.0)
+            score += jitter
+
+            scores.append((node_i, score))
+
+    if total_nodes == 0:
+        return scores, 0
+
+    total_scored = len(scores)
+    frac = 0.15 + rng.random() * 0.25  # between 0.15 and 0.40
+    k = int(round(total_scored * frac))
+    if k < 1:
+        k = 1
+    if k > total_scored:
+        k = total_scored
+
+    return scores, k
+",3944961.7,CVRP,True,False,high,10,cvrp_lns
+pop_13_op_m2_n18_250821_223431,premarshalling_astar,results_20250821_114744_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_13_op_m2_n18_250821_223431.json,m2,"This heuristic calculates the score by assigning penalties based on the number of blocking loads, with an increasing penalty for each deeper blockage level, but uses a different base penalty and decay factor to emphasize more critical deep blockages.
+","def score_state(state):
+    score = 0.0
+    base_penalty = 2.5
+    decay_factor = 0.8
+    for lane in state:
+        highest_priority = None
+        depth_penalty = 0
+        for i in range(len(lane)):
+            if lane[i] != 0:
+                if highest_priority is not None and lane[i] < highest_priority:
+                    score += base_penalty ** depth_penalty * (decay_factor ** depth_penalty)
+                highest_priority = lane[i]
+                depth_penalty += 1
+    return score
+",0.33863,Premarshalling,True,False,low,1,premarshalling_astar
+pop_5_op_m1_n0_250825_144407,premarshalling_astar,results_20251114_103544_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_5_op_m1_n0_250825_144407.json,m1,"Heuristic calculates the score based on the weighted sum of the number of blocked loads, the depth of each block, and the priority class of the blocked loads, with higher penalties for deeper and lower priority blocks.
+","def score_state(state):
+    score = 0
+    for lane in state:
+        max_val = 0
+        for idx, unit in enumerate(lane):
+            if unit != 0:
+                if unit < max_val:
+                    score += (idx + 1) * (6 - unit)
+                max_val = unit
+    return score
+",0.68948,Premarshalling,True,False,mid,2,premarshalling_astar
+pop_19_op_m1_n0_251114_131836,premarshalling_astar,results_20251114_103544_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_19_op_m1_n0_251114_131836.json,m1,"This heuristic calculates the score based on the sum of penalties for blocked loads, scaled by their distance from the front of the lane and normalized by the lane length, with an additional penalty for lanes that are further from being sorted and a bonus for lanes that have their highest priority load at the accessible position.
+","def score_state(state):
+    score = 0
+    for lane in state:
+        max_val = 0
+        block_count = 0
+        lane_length = len(lane)
+        is_sorted = True
+        
+        for idx, load in enumerate(lane):
+            if load != 0:
+                if max_val > load:
+                    block_count += 1
+                    higher_loads_above = sum(1 for i in range(idx + 1, lane_length) if lane[i] < load)
+                    penalty = (block_count * higher_loads_above * idx) / lane_length
+                    score += penalty
+                    is_sorted = False
+                else:
+                    block_count = 0
+                max_val = load
+        
+        if not is_sorted:
+            score += sum(load for load in lane if load != 0) / lane_length
+        
+        if lane and lane[0] == max_val:
+            score -= 1
+    
+    return score
+",0.10826,Premarshalling,True,False,low,3,premarshalling_astar
+pop_13_op_e2_n2_250821_221005,premarshalling_astar,results_20250821_114744_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_13_op_e2_n2_250821_221005.json,e2,"The heuristic calculates the score by summing the cumulative penalties for each lane based on the number of out-of-order loads, with higher penalties assigned to deeper loads and normalized by the lane's maximum possible filled length.
+","def score_state(state):
+    score = 0.0
+    for lane in state:
+        non_zero_elements = [load for load in lane if load != 0]
+        n = len(non_zero_elements)
+        max_length_factor = 1.0 / (n + 1e-6)  # Avoid division by zero
+        penalty = 0
+        for i in range(n - 1):
+            if non_zero_elements[i] > non_zero_elements[i + 1]:
+                penalty += (i + 1) * non_zero_elements[i]
+        score += penalty * max_length_factor
+    return score
+",0.14275,Premarshalling,True,False,low,4,premarshalling_astar
+pop_11_op_m2_n10_250818_191239,premarshalling_astar,results_20250815_092046_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_11_op_m2_n10_250818_191239.json,m2,"This heuristic calculates the score based on the total number of out-of-order elements across all stacks, weighted by their values and adjusted for stack depth to prioritize resolving issues in shallower stacks.
+","def score_state(state):
+    score = 0
+    max_stack_height = max(len(stack) for stack in state)
+    
+    for stack in state:
+        n = len(stack)
+        if n == 0:
+            continue
+        
+        out_of_order_count = 0
+        total_value = 0
+        
+        for i in range(n - 1):
+            if stack[i] > stack[i + 1]:
+                out_of_order_count += 1
+                total_value += (stack[i] + stack[i + 1])
+        
+        if out_of_order_count > 0:
+            average_value = total_value / (out_of_order_count * 2)
+            score += out_of_order_count * average_value * ((n - out_of_order_count) / max_stack_height)
+    
+    return  score
+",1.17707,Premarshalling,True,False,mid,5,premarshalling_astar
+pop_0_op_i1_n0_250821_120940,premarshalling_astar,results_20250821_114744_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_0_op_i1_n0_250821_120940.json,i1,"The heuristic calculates the score by summing the distances of all blocking loads from their respective end positions, considering the priority classes.
+","def score_state(state):
+    score = 0
+    for lane in state:
+        non_empty_start = next((i for i, x in enumerate(lane) if x != 0), len(lane))
+        for i in range(non_empty_start, len(lane)):
+            for j in range(i + 1, len(lane)):
+                if lane[i] > lane[j]:
+                    score += (len(lane) - j)
+    return score
+",1.17207,Premarshalling,True,False,mid,6,premarshalling_astar
+pop_16_op_e1_n17_250819_105708,premarshalling_astar,results_20250815_092046_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_16_op_e1_n17_250819_105708.json,e1,"This heuristic calculates the score based on the cumulative penalty for each out-of-order load, where penalties are determined by the value of the load multiplied by its distance from the top of the stack, with additional penalties for loads that require movement across multiple stacks and rewards for configurations that minimize the total number of misplaced elements.
+","def score_state(state):
+    total_score = 0
+    cross_stack_penalty_factor = 1.5  # Increased penalty for crossing stacks
+
+    for i in range(len(state)):
+        stack = state[i]
+        n = len(stack)
+        misplaced_count = sum(1 for j in range(n - 1) if stack[j] > stack[j + 1])
+
+        for j in range(n - 1, 0, -1):
+            if stack[j] < stack[j - 1]:
+                correct_pos = next((k for k in range(j) if stack[k] != 0 and stack[j] <= stack[k]), j - 1)
+                distance_penalty = (j - correct_pos) * stack[j]
+                cross_stack_penalty = 0
+                if correct_pos > j:
+                    cross_stack_penalty = cross_stack_penalty_factor * stack[j]
+                total_score += distance_penalty + cross_stack_penalty
+        
+        # Penalty based on the number of misplaced elements
+        misplaced_penalty = misplaced_count * (stack[0] if n > 0 else 0)
+        total_score += misplaced_penalty
+
+    return  total_score
+",0.35344,Premarshalling,True,False,low,7,premarshalling_astar
+pop_0_op_i1_n9_250825_095101,premarshalling_astar,results_20251114_103544_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_0_op_i1_n9_250825_095101.json,i1,"Design a heuristic that calculates the score based on the number of blocked unit loads, prioritizing higher priority classes to be unblocked first.
+","def score_state(state):
+    score = 0
+    for lane in state:
+        blocking_count = 0
+        seen_non_zero = False
+        for load in reversed(lane):
+            if load != 0:
+                seen_non_zero = True
+            if seen_non_zero and load == 0:
+                blocking_count += 1
+        score += blocking_count * (len(lane) - blocking_count)
+    return score
+",13.9329,Premarshalling,True,False,high,8,premarshalling_astar
+pop_17_op_e1_n11_250822_005416,premarshalling_astar,results_20250821_114744_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_17_op_e1_n11_250822_005416.json,e1,"The heuristic calculates the score by summing the cumulative priority of blocked loads, adjusting for their position from the front, and applying penalties based on both the number of blocking occurrences and the distance to the nearest unblocked load, with an additional factor that considers the lane's fill ratio.
+","def score_state(state):
+    score = 0.0
+    for lane in state:
+        non_zero_elements = [load for load in lane if load != 0]
+        n = len(non_zero_elements)
+        blocking_count = sum(1 for i in range(n - 1) if non_zero_elements[i] > non_zero_elements[i + 1])
+        priority_penalty = sum(non_zero_elements[i] * (i + 1) for i in range(n - 1) if non_zero_elements[i] > non_zero_elements[i + 1])
+        distance_penalty = 0
+        for i in range(n - 1):
+            if non_zero_elements[i] > non_zero_elements[i + 1]:
+                j = i + 2
+                while j < n and non_zero_elements[j] <= non_zero_elements[i]:
+                    j += 1
+                distance_penalty += (j - i - 1)
+        fill_ratio_penalty = (lane.count(0) / len(lane)) if lane else 0
+        score += (priority_penalty + blocking_count + distance_penalty) * (1 - fill_ratio_penalty)
+    return score
+",0.50625,Premarshalling,True,False,mid,9,premarshalling_astar
+pop_11_op_m1_n15_250818_181344,premarshalling_astar,results_20250815_092046_multibay_reshuffle_astar_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_11_op_m1_n15_250818_181344.json,m1,"This heuristic calculates the score based on the total number of inversions across all stacks, where each inversion's penalty is weighted by the sum of the values of the involved loads divided by their positions from the top of the stack.
+","def score_state(state):
+    score = 0
+    for stack in state:
+        n = len(stack)
+        for i in range(n - 1):
+            for j in range(i + 1, n):
+                if stack[i] > stack[j]:
+                    score += (stack[i] + stack[j]) / (i + 1 + j + 1)
+    return  score
+",3.27528,Premarshalling,True,False,high,10,premarshalling_astar
+pop_14_op_m2_n5_251009_013943,puzzle_astar,results_20251007_183918_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_14_op_m2_n5_251009_013943.json,m2,"This heuristic calculates the sum of Manhattan distances for each misplaced tile, incorporates penalties based on tiles that block each other's goal paths with an increased penalty factor, and adjusts by considering the distance to the nearest incorrectly positioned neighbor with a reduced adaptive weight factor.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    misplaced_tiles = set()
+    
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                goal_i, goal_j = divmod(value - 1, N)
+                manhattan_distance = abs(i - goal_i) + abs(j - goal_j)
+                score += manhattan_distance
+                if i != goal_i or j != goal_j:
+                    misplaced_tiles.add((i, j))
+    
+    for (i, j) in misplaced_tiles:
+        value = state[i][j]
+        goal_i, goal_j = divmod(value - 1, N)
+        min_penalty = float('inf')
+        
+        # Check neighbors for penalty adjustment with adaptive weight
+        for di, dj in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            ni, nj = i + di, j + dj
+            if 0 <= ni < N and 0 <= nj < N and state[ni][nj] != 0:
+                n_value = state[ni][nj]
+                n_goal_i, n_goal_j = divmod(n_value - 1, N)
+                penalty = abs(ni - goal_i) + abs(nj - goal_j)
+                if penalty == 0:
+                    min_penalty = 0
+                    break
+                else:
+                    # Adaptive weight factor based on distance to edge with reduced weight
+                    distance_to_edge = min(i, N - i - 1, j, N - j - 1)
+                    weight_factor = (distance_to_edge / (N // 2)) if distance_to_edge > 0 else 0.5
+                    min_penalty = min(min_penalty, penalty * weight_factor)
+        
+        score += min_penalty
+    
+    # Blockage penalty between tiles that block each other's goal paths with increased factor
+    for i in range(N):
+        row_tiles = [(state[i][j], j) for j in range(N) if state[i][j] != 0 and (state[i][j] - 1) // N == i]
+        row_tiles.sort(key=lambda x: divmod(x[0] - 1, N)[1])
+        for k in range(len(row_tiles) - 1):
+            for l in range(k + 1, len(row_tiles)):
+                if row_tiles[k][1] > row_tiles[l][1]:
+                    score += 2 * (l - k)
+    
+    for j in range(N):
+        col_tiles = [(state[i][j], i) for i in range(N) if state[i][j] != 0 and (state[i][j] - 1) % N == j]
+        col_tiles.sort(key=lambda x: divmod(x[0] - 1, N)[0])
+        for k in range(len(col_tiles) - 1):
+            for l in range(k + 1, len(col_tiles)):
+                if col_tiles[k][1] > col_tiles[l][1]:
+                    score += 2 * (l - k)
+    
+    return score
+",1.50491,SlidingPuzzle,True,False,low,1,puzzle_astar
+pop_8_op_m1_n8_251005_093415,puzzle_astar,results_20251004_181749_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_8_op_m1_n8_251005_093415.json,m1,"This heuristic calculates the sum of Manhattan distances for each tile, adds penalties based on the number of misplaced tiles, and incorporates a penalty for linear conflicts within rows and columns by considering the number of inversions, using a weighted approach to prioritize penalties for tiles closer to their target position.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    row_positions = [set() for _ in range(N)]
+    col_positions = [set() for _ in range(N)]
+    
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                distance = abs(i - target_i) + abs(j - target_j)
+                score += distance
+                row_positions[target_i].add((value, j))
+                col_positions[target_j].add((value, i))
+
+    def count_inversions(positions):
+        sorted_positions = sorted(positions, key=lambda x: x[0])
+        inversions = 0
+        for k in range(len(sorted_positions) - 1):
+            if sorted_positions[k][1] > sorted_positions[k + 1][1]:
+                inversions += 1
+        return inversions
+
+    misplaced_tiles = sum(1 for i in range(N) for j in range(N) if state[i][j] != 0 and state[i][j] != (i * N + j + 1))
+
+    for positions in row_positions:
+        score += count_inversions(positions) * 3
+
+    for positions in col_positions:
+        score += count_inversions(positions) * 3
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                distance = abs(i - target_i) + abs(j - target_j)
+                score += (distance / N) * 2
+
+    return score
+",1.617,SlidingPuzzle,True,False,mid,2,puzzle_astar
+pop_19_op_m1_n11_251006_055659,puzzle_astar,results_20251004_181749_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_19_op_m1_n11_251006_055659.json,m1,"This heuristic calculates the sum of Manhattan distances for each tile, adds penalties based on tiles that are out of their correct row or column using a different multiplier, incorporates a penalty for obstructed paths with a linear decay factor, and adjusts for misplaced tiles within rows and columns using a cumulative penalty approach, but modifies the obstruction penalty to consider both vertical and horizontal directions separately.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    total_distance = 0
+    row_positions = [set() for _ in range(N)]
+    col_positions = [set() for _ in range(N)]
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                distance = abs(i - target_i) + abs(j - target_j)
+                total_distance += distance
+                score += distance * (distance + 1) / 2
+                row_positions[target_i].add((value, j))
+                col_positions[target_j].add((value, i))
+
+    def count_misplaced_neighbors(positions):
+        sorted_positions = sorted(positions, key=lambda x: x[0])
+        misplaced = 0
+        for k in range(1, len(sorted_positions)):
+            if sorted_positions[k][1] < sorted_positions[k - 1][1]:
+                misplaced += 1
+        return misplaced
+
+    def count_obstructed_paths(state, i, j, target_i, target_j):
+        obstructed = 0
+        for x in range(min(i, target_i) + 1, max(i, target_i)):
+            if state[x][j] != 0:
+                obstructed += 1 / (x - min(i, target_i))
+        for y in range(min(j, target_j) + 1, max(j, target_j)):
+            if state[i][y] != 0:
+                obstructed += 1 / (y - min(j, target_j))
+        return obstructed
+
+    for positions in row_positions:
+        score += count_misplaced_neighbors(positions) * 3
+
+    for positions in col_positions:
+        score += count_misplaced_neighbors(positions) * 2
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                obstructed_paths = count_obstructed_paths(state, i, j, target_i, target_j)
+                score += obstructed_paths
+
+    score += total_distance / (N * 2)
+
+    return score
+",0.91381,SlidingPuzzle,True,False,low,3,puzzle_astar
+pop_19_op_e2_n5_251006_053013,puzzle_astar,results_20251004_181749_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_19_op_e2_n5_251006_053013.json,e2,"This heuristic calculates the sum of Manhattan distances for each tile, incorporates penalties based on tiles that are out of their correct row or column using a unique non-linear multiplier, includes a penalty for tiles blocking other tiles' direct paths with an adjusted factor, and adjusts for misplaced tiles within rows and columns by considering the relative positions and distances to the target positions.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    row_positions = [set() for _ in range(N)]
+    col_positions = [set() for _ in range(N)]
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                distance = abs(i - target_i) + abs(j - target_j)
+                score += distance * (distance ** 1.25)
+                row_positions[target_i].add((value, j))
+                col_positions[target_j].add((value, i))
+
+    for positions in row_positions:
+        sorted_positions = sorted(positions, key=lambda x: x[0])
+        misplaced = sum(1 for k in range(1, len(sorted_positions)) if sorted_positions[k][1] < sorted_positions[k - 1][1])
+        score += misplaced * 4
+
+    for positions in col_positions:
+        sorted_positions = sorted(positions, key=lambda x: x[0])
+        misplaced = sum(1 for k in range(1, len(sorted_positions)) if sorted_positions[k][1] < sorted_positions[k - 1][1])
+        score += misplaced * 3
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                obstructed_x = sum(1 for x in range(min(i, target_i) + 1, max(i, target_i)) if state[x][j] != 0)
+                obstructed_y = sum(1 for y in range(min(j, target_j) + 1, max(j, target_j)) if state[i][y] != 0)
+                score += (obstructed_x + obstructed_y) * distance ** 0.5
+
+    return score
+",1.1781,SlidingPuzzle,True,False,low,4,puzzle_astar
+pop_3_op_m2_n16_251005_011247,puzzle_astar,results_20251004_181749_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_3_op_m2_n16_251005_011247.json,m2,"Calculate the sum of Manhattan distances for each tile, add penalties for tiles being out of their target row or column by more than two positions, and adjust the score based on linear conflict between misplaced tiles within the same row or column with higher penalties.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    misplaced_tiles_row = [set() for _ in range(N)]
+    misplaced_tiles_col = [set() for _ in range(N)]
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                distance = abs(i - target_i) + abs(j - target_j)
+                score += distance
+                if i != target_i and abs(i - target_i) > 1:
+                    misplaced_tiles_row[i].add((value, j))
+                if j != target_j and abs(j - target_j) > 1:
+                    misplaced_tiles_col[j].add((value, i))
+
+    for row_set in misplaced_tiles_row:
+        conflicts = len(row_set) - 1
+        score += conflicts * 0.75
+
+    for col_set in misplaced_tiles_col:
+        conflicts = len(col_set) - 1
+        score += conflicts * 0.75
+
+    return score
+",1.74981,SlidingPuzzle,True,False,mid,5,puzzle_astar
+pop_0_op_i1_n9_251016_142943,puzzle_astar,results_20251016_142827_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_0_op_i1_n9_251016_142943.json,i1,"The heuristic calculates the sum of Manhattan distances of each tile from its goal position, ignoring the empty slot, to estimate the minimum number of moves required to solve the puzzle.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                score += abs(i - target_i) + abs(j - target_j)
+    return score
+",2.20381,SlidingPuzzle,True,False,mid,6,puzzle_astar
+pop_9_op_e1_n9_251005_102726,puzzle_astar,results_20251004_181749_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_9_op_e1_n9_251005_102726.json,e1,"This heuristic calculates a score by summing Manhattan distances for each tile, adding penalties based on the number of tiles that are blocking the path to their target positions, and incorporating a penalty for tiles being out of sequence within their row or column using a permutation inversion count.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    row_positions = [set() for _ in range(N)]
+    col_positions = [set() for _ in range(N)]
+
+    def count_inversions(positions):
+        sorted_positions = sorted(positions, key=lambda x: x[0])
+        inversions = 0
+        for k in range(len(sorted_positions) - 1):
+            if sorted_positions[k][1] > sorted_positions[k + 1][1]:
+                inversions += 1
+        return inversions
+
+    def count_blocking_tiles(state, i, j, target_i, target_j):
+        blocking = 0
+        if i < target_i:
+            for x in range(i + 1, target_i):
+                if state[x][j] != 0:
+                    blocking += 1
+        elif i > target_i:
+            for x in range(target_i + 1, i):
+                if state[x][j] != 0:
+                    blocking += 1
+        if j < target_j:
+            for y in range(j + 1, target_j):
+                if state[i][y] != 0:
+                    blocking += 1
+        elif j > target_j:
+            for y in range(target_j + 1, j):
+                if state[i][y] != 0:
+                    blocking += 1
+        return blocking
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                score += abs(i - target_i) + abs(j - target_j)
+                row_positions[target_i].add((value, j))
+                col_positions[target_j].add((value, i))
+
+    for positions in row_positions:
+        score += count_inversions(positions) * 3
+
+    for positions in col_positions:
+        score += count_inversions(positions) * 3
+
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                target_i, target_j = divmod(value - 1, N)
+                blocking_tiles = count_blocking_tiles(state, i, j, target_i, target_j)
+                score += blocking_tiles * 4
+
+    return score
+",1.26911,SlidingPuzzle,True,False,low,7,puzzle_astar
+pop_0_op_i1_n15_251016_142943,puzzle_astar,results_20251016_142827_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_0_op_i1_n15_251016_142943.json,i1,"Calculate the heuristic score by summing Manhattan distances of each tile from its goal position, treating the empty space (0) as a regular tile for distance calculation.}
+","def score_state(state):
+    N = len(state)
+    target_positions = {i: (i // N, i % N) for i in range(1, N * N)}
+    score = 0
+
+    for row_idx in range(N):
+        for col_idx in range(N):
+            tile = state[row_idx][col_idx]
+            if tile != 0:
+                target_row, target_col = target_positions[tile]
+                score += abs(row_idx - target_row) + abs(col_idx - target_col)
+
+    return score
+",2.5337,SlidingPuzzle,True,False,high,8,puzzle_astar
+pop_4_op_e1_n14_251008_022932,puzzle_astar,results_20251007_183918_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_4_op_e1_n14_251008_022932.json,e1,"This heuristic calculates the sum of Manhattan distances of each tile from its goal position, excluding the empty tile (0), and adds a penalty based on the number of tiles that are misplaced relative to their expected positions within blocks of four adjacent tiles, encouraging more localized rearrangements.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                goal_i, goal_j = divmod(value - 1, N)
+                manhattan_distance = abs(i - goal_i) + abs(j - goal_j)
+                score += manhattan_distance
+    
+    # Block-based penalty
+    for i in range(0, N-1, 2):
+        for j in range(0, N-1, 2):
+            block = [
+                state[i][j], state[i][j+1],
+                state[i+1][j], state[i+1][j+1]
+            ]
+            sorted_block = sorted(block)
+            if block != sorted_block:
+                score += 1
+    
+    return score
+",1.90788,SlidingPuzzle,True,False,mid,9,puzzle_astar
+pop_18_op_m1_n0_251009_092244,puzzle_astar,results_20251007_183918_puzzle_astar_edu_qwen25coder32b_ueTrue_uiFalse_uitypeNone,program_pop_18_op_m1_n0_251009_092244.json,m1,"This heuristic calculates the sum of Manhattan distances for each misplaced tile, adds penalties based on linear conflicts between tiles that need to swap places, and adjusts the score by considering the cumulative impact of incorrectly ordered tiles in rows and columns with a decay factor proportional to their distance from being correctly positioned.
+","def score_state(state):
+    N = len(state)
+    score = 0
+    
+    for i in range(N):
+        for j in range(N):
+            value = state[i][j]
+            if value != 0:
+                goal_i, goal_j = divmod(value - 1, N)
+                manhattan_distance = abs(i - goal_i) + abs(j - goal_j)
+                score += manhattan_distance
+                
+                # Check for linear conflicts in rows
+                if i == goal_i:
+                    for k in range(N):
+                        other_value = state[i][k]
+                        if other_value != 0:
+                            other_goal_i, other_goal_j = divmod(other_value - 1, N)
+                            if other_goal_i == goal_i and k > j and other_goal_j < goal_j:
+                                score += 2
+                
+                # Check for linear conflicts in columns
+                if j == goal_j:
+                    for k in range(N):
+                        other_value = state[k][j]
+                        if other_value != 0:
+                            other_goal_i, other_goal_j = divmod(other_value - 1, N)
+                            if other_goal_j == goal_j and k > i and other_goal_i < goal_i:
+                                score += 2
+    
+    for i in range(N):
+        row_tiles = [(state[i][j], j) for j in range(N) if state[i][j] != 0 and (state[i][j] - 1) // N == i]
+        row_tiles.sort(key=lambda x: divmod(x[0] - 1, N)[1])
+        for k in range(1, len(row_tiles)):
+            if row_tiles[k][1] < row_tiles[k - 1][1]:
+                score += (N - row_tiles[k][1]) ** 2
+    
+    for j in range(N):
+        col_tiles = [(state[i][j], i) for i in range(N) if state[i][j] != 0 and (state[i][j] - 1) % N == j]
+        col_tiles.sort(key=lambda x: divmod(x[0] - 1, N)[0])
+        for k in range(1, len(col_tiles)):
+            if col_tiles[k][1] < col_tiles[k - 1][1]:
+                score += (N - col_tiles[k][1]) ** 2
+    
+    return score
+",2.37694,SlidingPuzzle,True,False,high,10,puzzle_astar
