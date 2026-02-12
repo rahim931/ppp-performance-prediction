@@ -36,6 +36,7 @@ class DeepSeekLLMClient(LLMClient):
         max_retries: int = 5,
         backoff_base_s: float = 1.0,
         cache_path: str = "artifacts/cache/deepseek_cache.jsonl",
+        enable_cache: bool = True,
     ):
         self.cfg = cfg
         base = cfg.base_url.rstrip("/")
@@ -43,9 +44,9 @@ class DeepSeekLLMClient(LLMClient):
 
         self.max_retries = max_retries
         self.backoff_base_s = backoff_base_s
-
-        # Enable cache by default
-        self.cache = JsonlCache(cache_path)
+        
+        self.enable_cache = enable_cache
+        self.cache = JsonlCache(cache_path) if enable_cache else None
 
     def _prompt_hash(
         self,
@@ -99,9 +100,10 @@ class DeepSeekLLMClient(LLMClient):
         )
 
         # 1) Cache check
-        cached_resp = self.cache.get(prompt_hash)
-        if cached_resp is not None:
-            return cached_resp
+        if self.cache is not None:
+            cached_resp = self.cache.get(prompt_hash)
+            if cached_resp is not None:
+                return cached_resp
 
         headers = {
             "Authorization": f"Bearer {self.cfg.api_key}",
@@ -153,7 +155,8 @@ class DeepSeekLLMClient(LLMClient):
                 )
 
                 # 2) Store in cache
-                self.cache.put(resp)
+                if self.cache is not None:
+                    self.cache.put(resp)
 
                 return resp
 

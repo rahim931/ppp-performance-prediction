@@ -1,0 +1,2003 @@
+raw_app_type,heuristic_id,repeat_idx,objective,prediction_raw,prediction_clamped,confidence,parse_ok,parse_error,raw_text
+puzzle_astar,pop_7_op_m1_n13_251008_085951,0,1.82311,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,1,1.82311,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,2,1.82311,1.35008,1.35008,0.75,True,,"{
+  ""prediction"": 1.35008,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,3,1.82311,1.35008,1.35008,0.75,True,,"{
+  ""prediction"": 1.35008,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,4,1.82311,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,5,1.82311,0.9,0.9,0.7,True,,"{
+  ""prediction"": 0.9,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,6,1.82311,0.8,0.8,0.7,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,7,1.82311,0.8,0.8,0.75,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,8,1.82311,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_7_op_m1_n13_251008_085951,9,1.82311,1.35008,1.35008,0.75,True,,"{
+    ""prediction"": 1.35008,
+    ""confidence"": 0.75
+}"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,0,2.5337,1.903635,1.903635,0.65,True,,"```json
+{
+""prediction"": 1.903635,
+""confidence"": 0.65
+}
+```"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,1,2.5337,1.35008,1.35008,0.75,True,,"{
+    ""prediction"": 1.35008,
+    ""confidence"": 0.75
+}"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,2,2.5337,1.903635,1.903635,0.75,True,,"{
+    ""prediction"": 1.903635,
+    ""confidence"": 0.75
+}"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,3,2.5337,1.903635,1.903635,0.75,True,,"```json
+{
+""prediction"": 1.903635,
+""confidence"": 0.75
+}
+```"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,4,2.5337,1.903635,1.903635,0.75,True,,"```json
+{
+""prediction"": 1.903635,
+""confidence"": 0.75
+}
+```"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,5,2.5337,1.903635,1.903635,0.75,True,,"{
+    ""prediction"": 1.903635,
+    ""confidence"": 0.75
+}"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,6,2.5337,1.903635,1.903635,0.65,True,,"```json
+{
+""prediction"": 1.903635,
+""confidence"": 0.65
+}
+```"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,7,2.5337,1.8,1.8,0.65,True,,"{
+    ""prediction"": 1.8,
+    ""confidence"": 0.65
+}"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,8,2.5337,1.75,1.75,0.65,True,,"{
+  ""prediction"": 1.75,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_16_op_e2_n17_251006_000601,9,2.5337,1.903635,1.903635,0.72,True,,"```json
+{
+""prediction"": 1.903635,
+""confidence"": 0.72
+}
+```"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,0,1.33556,1.35035,1.35035,0.95,True,,"```json
+{
+""prediction"": 1.35035,
+""confidence"": 0.95
+}
+```"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,1,1.33556,1.35035,1.35035,0.95,True,,"```json
+{
+""prediction"": 1.35035,
+""confidence"": 0.95
+}
+```"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,2,1.33556,0.903875,0.903875,0.85,True,,"{
+  ""prediction"": 0.903875,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,3,1.33556,1.35035,1.35035,0.95,True,,"```json
+{
+""prediction"": 1.35035,
+""confidence"": 0.95
+}
+```"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,4,1.33556,0.9039,0.9039,0.85,True,,"{
+  ""prediction"": 0.9039,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,5,1.33556,1.35035,1.35035,0.95,True,,"```json
+{
+""prediction"": 1.35035,
+""confidence"": 0.95
+}
+```"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,6,1.33556,0.903875,0.903875,0.85,True,,"{
+  ""prediction"": 0.903875,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,7,1.33556,0.903875,0.903875,0.85,True,,"{
+  ""prediction"": 0.903875,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,8,1.33556,0.903875,0.903875,0.85,True,,"{
+  ""prediction"": 0.903875,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_4_op_e1_n12_251005_013931,9,1.33556,0.903875,0.903875,0.85,True,,"{
+  ""prediction"": 0.903875,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,0,2.5337,1.903635,1.903635,0.75,True,,"{
+    ""prediction"": 1.903635,
+    ""confidence"": 0.75
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,1,2.5337,1.903635,1.903635,0.75,True,,"{
+    ""prediction"": 1.903635,
+    ""confidence"": 0.75
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,2,2.5337,1.903635,1.903635,0.7,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,3,2.5337,1.903635,1.903635,0.65,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,4,2.5337,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,5,2.5337,1.903635,1.903635,0.65,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,6,2.5337,1.903635,1.903635,0.7,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,7,2.5337,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,8,2.5337,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_6_op_e2_n12_251008_063903,9,2.5337,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,0,2.5337,0.85,0.85,0.65,True,,"```json
+{
+""prediction"": 0.85,
+""confidence"": 0.65
+}
+```"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,1,2.5337,1.903685,1.903685,0.75,True,,"{
+  ""prediction"": 1.903685,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,2,2.5337,1.5,1.5,0.6,True,,"{
+  ""prediction"": 1.5,
+  ""confidence"": 0.6
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,3,2.5337,1.903,1.903,0.65,True,,"{
+  ""prediction"": 1.903,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,4,2.5337,1.2,1.2,0.65,True,,"{
+  ""prediction"": 1.2,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,5,2.5337,0.7,0.7,0.65,True,,"{
+  ""prediction"": 0.7,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,6,2.5337,1.5,1.5,0.65,True,,"{
+  ""prediction"": 1.5,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,7,2.5337,1.2,1.2,0.7,True,,"{
+  ""prediction"": 1.2,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,8,2.5337,1.903785,1.903785,0.75,True,,"```json
+{
+""prediction"": 1.903785,
+""confidence"": 0.75
+}
+```"
+puzzle_astar,pop_10_op_e1_n13_251005_121244,9,2.5337,0.8,0.8,0.7,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,0,1.55274,1.903635,1.903635,0.75,True,,"{
+    ""prediction"": 1.903635,
+    ""confidence"": 0.75
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,1,1.55274,1.903635,1.903635,0.65,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,2,1.55274,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,3,1.55274,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,4,1.55274,1.903635,1.903635,0.65,True,,"{
+    ""prediction"": 1.903635,
+    ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,5,1.55274,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,6,1.55274,1.903635,1.903635,0.7,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,7,1.55274,1.903635,1.903635,0.65,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,8,1.55274,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_10_op_e2_n2_251024_003548,9,1.55274,0.8,0.8,0.75,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,0,2.38235,1.903635,1.903635,0.7,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,1,2.38235,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,2,2.38235,1.903635,1.903635,0.65,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,3,2.38235,1.903635,1.903635,0.75,True,,"```json
+{
+""prediction"": 1.903635,
+""confidence"": 0.75
+}
+```"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,4,2.38235,1.9038,1.9038,0.72,True,,"```json
+{
+""prediction"": 1.9038,
+""confidence"": 0.72
+}
+```"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,5,2.38235,1.903635,1.903635,0.65,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,6,2.38235,1.903835,1.903835,0.75,True,,"```json
+{
+""prediction"": 1.903835,
+""confidence"": 0.75
+}
+```"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,7,2.38235,1.903635,1.903635,0.75,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,8,2.38235,1.903635,1.903635,0.65,True,,"{
+  ""prediction"": 1.903635,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_1_op_e1_n8_251007_210614,9,2.38235,1.8,1.8,0.65,True,,"{
+  ""prediction"": 1.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,0,1.84425,1.903685,1.903685,0.65,True,,"{
+  ""prediction"": 1.903685,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,1,1.84425,1.8,1.8,0.65,True,,"{
+  ""prediction"": 1.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,2,1.84425,1.9037,1.9037,0.72,True,,"```json
+{
+""prediction"": 1.9037,
+""confidence"": 0.72
+}
+```"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,3,1.84425,1.903685,1.903685,0.72,True,,"```json
+{
+""prediction"": 1.903685,
+""confidence"": 0.72
+}
+```"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,4,1.84425,1.8,1.8,0.65,True,,"{
+  ""prediction"": 1.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,5,1.84425,1.75,1.75,0.65,True,,"{
+  ""prediction"": 1.75,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,6,1.84425,1.903,1.903,0.65,True,,"{
+  ""prediction"": 1.903,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,7,1.84425,1.903,1.903,0.65,True,,"```json
+{
+""prediction"": 1.903,
+""confidence"": 0.65
+}
+```"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,8,1.84425,1.8,1.8,0.65,True,,"{
+  ""prediction"": 1.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_19_op_e2_n13_251006_053013,9,1.84425,1.903685,1.903685,0.75,True,,"```json
+{
+""prediction"": 1.903685,
+""confidence"": 0.75
+}
+```"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,0,2.20381,2.5337,2.5337,0.85,True,,"{
+  ""prediction"": 2.5337,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,1,2.20381,2.5337,2.5337,0.85,True,,"```json
+{
+""prediction"": 2.5337,
+""confidence"": 0.85
+}
+```"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,2,2.20381,2.5337,2.5337,0.85,True,,"```json
+{
+""prediction"": 2.5337,
+""confidence"": 0.85
+}
+```"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,3,2.20381,2.5337,2.5337,0.85,True,,"```json
+{
+""prediction"": 2.5337,
+""confidence"": 0.85
+}
+```"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,4,2.20381,2.5337,2.5337,0.8,True,,"{
+  ""prediction"": 2.5337,
+  ""confidence"": 0.8
+}"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,5,2.20381,2.5337,2.5337,0.85,True,,"{
+  ""prediction"": 2.5337,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,6,2.20381,2.5337,2.5337,0.85,True,,"```json
+{
+""prediction"": 2.5337,
+""confidence"": 0.85
+}
+```"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,7,2.20381,2.5337,2.5337,0.8,True,,"{
+  ""prediction"": 2.5337,
+  ""confidence"": 0.8
+}"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,8,2.20381,2.5337,2.5337,0.85,True,,"{
+  ""prediction"": 2.5337,
+  ""confidence"": 0.85
+}"
+puzzle_astar,pop_1_op_m1_n17_251004_212208,9,2.20381,2.5337,2.5337,0.8,True,,"{
+  ""prediction"": 2.5337,
+  ""confidence"": 0.8
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,0,0.98115,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,1,0.98115,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,2,0.98115,1.2,1.2,0.7,True,,"{
+  ""prediction"": 1.2,
+  ""confidence"": 0.7
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,3,0.98115,1.2,1.2,0.65,True,,"{
+  ""prediction"": 1.2,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,4,0.98115,0.8,0.8,0.65,True,,"{
+  ""prediction"": 0.8,
+  ""confidence"": 0.65
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,5,0.98115,1.8,1.8,0.6,True,,"{
+  ""prediction"": 1.8,
+  ""confidence"": 0.6
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,6,0.98115,1.8,1.8,0.65,True,,"{
+    ""prediction"": 1.8,
+    ""confidence"": 0.65
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,7,0.98115,1.90377,1.90377,0.75,True,,"{
+  ""prediction"": 1.90377,
+  ""confidence"": 0.75
+}"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,8,0.98115,1.9038,1.9038,0.75,True,,"```json
+{
+""prediction"": 1.9038,
+""confidence"": 0.75
+}
+```"
+puzzle_astar,pop_15_op_m2_n16_251024_091905,9,0.98115,1.8,1.8,0.65,True,,"{
+  ""prediction"": 1.8,
+  ""confidence"": 0.65
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,0,13.9329,0.455,0.455,0.65,True,,"{
+    ""prediction"": 0.455,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,1,13.9329,0.455,0.455,0.75,True,,"{
+    ""prediction"": 0.455,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,2,13.9329,0.455,0.455,0.7,True,,"{
+    ""prediction"": 0.455,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,3,13.9329,0.42655,0.42655,0.65,True,,"{
+    ""prediction"": 0.42655,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,4,13.9329,0.455,0.455,0.7,True,,"{
+    ""prediction"": 0.455,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,5,13.9329,0.42655,0.42655,0.75,True,,"```json
+{
+""prediction"": 0.42655,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,6,13.9329,0.456,0.456,0.7,True,,"{
+    ""prediction"": 0.456,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,7,13.9329,0.426,0.426,0.75,True,,"{
+    ""prediction"": 0.426,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,8,13.9329,0.456,0.456,0.75,True,,"{
+    ""prediction"": 0.456,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_2_op_e1_n16_250825_115049,9,13.9329,0.456,0.456,0.65,True,,"{
+    ""prediction"": 0.456,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,0,0.37113,0.210055,0.210055,0.65,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.65
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,1,0.37113,0.21006,0.21006,0.75,True,,"{
+  ""prediction"": 0.21006,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,2,0.37113,0.210055,0.210055,0.7,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.7
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,3,0.37113,0.210055,0.210055,0.75,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,4,0.37113,0.210055,0.210055,0.7,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.7
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,5,0.37113,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,6,0.37113,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,7,0.37113,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,8,0.37113,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_11_op_m1_n8_250821_204759,9,0.37113,0.33863,0.33863,0.85,True,,"{
+""prediction"": 0.33863,
+""confidence"": 0.85
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,0,0.49223,0.210055,0.210055,0.75,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,1,0.49223,0.210055,0.210055,0.7,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,2,0.49223,0.210055,0.210055,0.75,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,3,0.49223,0.21005,0.21005,0.65,True,,"{
+  ""prediction"": 0.21005,
+  ""confidence"": 0.65
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,4,0.49223,0.210055,0.210055,0.65,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,5,0.49223,0.210055,0.210055,0.7,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,6,0.49223,0.210055,0.210055,0.75,True,,"```json
+{
+""prediction"": 0.210055,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,7,0.49223,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,8,0.49223,0.210055,0.210055,0.7,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_12_op_e2_n9_250821_212419,9,0.49223,0.210055,0.210055,0.75,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,0,0.67559,0.33863,0.33863,0.85,True,,"{
+  ""prediction"": 0.33863,
+  ""confidence"": 0.85
+}"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,1,0.67559,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,2,0.67559,0.210055,0.210055,0.85,True,,"```json
+{
+""prediction"": 0.210055,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,3,0.67559,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,4,0.67559,0.33863,0.33863,0.85,True,,"{
+  ""prediction"": 0.33863,
+  ""confidence"": 0.85
+}"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,5,0.67559,0.210055,0.210055,0.85,True,,"```json
+{
+""prediction"": 0.210055,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,6,0.67559,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,7,0.67559,0.33863,0.33863,0.85,True,,"```json
+{
+""prediction"": 0.33863,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,8,0.67559,0.210055,0.210055,0.85,True,,"```json
+{
+""prediction"": 0.210055,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_19_op_e1_n5_250822_032916,9,0.67559,0.210055,0.210055,0.85,True,,"```json
+{
+""prediction"": 0.210055,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,0,0.33867,0.57173,0.57173,0.65,True,,"```json
+{
+""prediction"": 0.57173,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,1,0.33867,0.57173,0.57173,0.65,True,,"```json
+{
+""prediction"": 0.57173,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,2,0.33867,0.57173,0.57173,0.65,True,,"```json
+{
+""prediction"": 0.57173,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,3,0.33867,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,4,0.33867,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,5,0.33867,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,6,0.33867,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,7,0.33867,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,8,0.33867,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_16_op_m2_n6_250819_135235,9,0.33867,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,0,0.32752,0.255055,0.255055,0.85,True,,"```json
+{
+""prediction"": 0.255055,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,1,0.32752,0.57173,0.57173,0.85,True,,"{
+  ""prediction"": 0.57173,
+  ""confidence"": 0.85
+}"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,2,0.32752,0.255055,0.255055,0.7,True,,"{
+    ""prediction"": 0.255055,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,3,0.32752,0.57173,0.57173,0.8,True,,"{
+    ""prediction"": 0.57173,
+    ""confidence"": 0.8
+}"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,4,0.32752,0.57173,0.57173,0.85,True,,"```json
+{
+""prediction"": 0.57173,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,5,0.32752,0.57173,0.57173,0.8,True,,"{
+    ""prediction"": 0.57173,
+    ""confidence"": 0.8
+}"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,6,0.32752,0.57173,0.57173,0.85,True,,"```json
+{
+""prediction"": 0.57173,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,7,0.32752,0.57173,0.57173,0.85,True,,"```json
+{
+""prediction"": 0.57173,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,8,0.32752,0.57173,0.57173,0.85,True,,"{
+    ""prediction"": 0.57173,
+    ""confidence"": 0.85
+}"
+premarshalling_astar,pop_12_op_m1_n8_250821_213956,9,0.32752,0.33863,0.33863,0.75,True,,"{
+  ""prediction"": 0.33863,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,0,6.71703,0.21005,0.21005,0.75,True,,"```json
+{
+""prediction"": 0.21005,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,1,6.71703,0.21045,0.21045,0.75,True,,"```json
+{
+""prediction"": 0.21045,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,2,6.71703,0.21025,0.21025,0.75,True,,"```json
+{
+""prediction"": 0.21025,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,3,6.71703,0.21,0.21,0.75,True,,"{
+    ""prediction"": 0.210,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,4,6.71703,0.21025,0.21025,0.72,True,,"```json
+{
+""prediction"": 0.21025,
+""confidence"": 0.72
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,5,6.71703,0.22005,0.22005,0.75,True,,"```json
+{
+""prediction"": 0.22005,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,6,6.71703,0.21,0.21,0.75,True,,"```json
+{
+""prediction"": 0.210,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,7,6.71703,0.215,0.215,0.75,True,,"```json
+{
+""prediction"": 0.215,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,8,6.71703,0.21025,0.21025,0.75,True,,"```json
+{
+""prediction"": 0.21025,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_7_op_e2_n12_250817_235400,9,6.71703,0.21025,0.21025,0.75,True,,"```json
+{
+""prediction"": 0.21025,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,0,10.69957,3.22334,3.22334,0.85,True,,"```json
+{
+""prediction"": 3.22334,
+""confidence"": 0.85
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,1,10.69957,0.57161,0.57161,0.65,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,2,10.69957,0.57161,0.57161,0.65,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,3,10.69957,0.57161,0.57161,0.65,True,,"{
+    ""prediction"": 0.57161,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,4,10.69957,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,5,10.69957,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,6,10.69957,0.57161,0.57161,0.65,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,7,10.69957,0.57161,0.57161,0.7,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.7
+}
+```"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,8,10.69957,0.57161,0.57161,0.75,True,,"{
+  ""prediction"": 0.57161,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_3_op_m1_n1_250825_130546,9,10.69957,0.57161,0.57161,0.65,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,0,0.79153,0.21005,0.21005,0.7,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,1,0.79153,0.21005,0.21005,0.75,True,,"{
+  ""prediction"": 0.21005,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,2,0.79153,0.210055,0.210055,0.7,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.7
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,3,0.79153,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,4,0.79153,0.21005,0.21005,0.75,True,,"{
+  ""prediction"": 0.21005,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,5,0.79153,0.21005,0.21005,0.75,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,6,0.79153,0.21005,0.21005,0.75,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,7,0.79153,0.21005,0.21005,0.65,True,,"{
+  ""prediction"": 0.21005,
+  ""confidence"": 0.65
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,8,0.79153,0.210055,0.210055,0.75,True,,"{
+  ""prediction"": 0.210055,
+  ""confidence"": 0.75
+}"
+premarshalling_astar,pop_3_op_m1_n8_250821_150204,9,0.79153,0.21005,0.21005,0.75,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,0,4.33667,0.210055,0.210055,0.75,True,,"{
+    ""prediction"": 0.210055,
+    ""confidence"": 0.75
+}"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,1,4.33667,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,2,4.33667,0.57161,0.57161,0.65,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.65
+}
+```"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,3,4.33667,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,4,4.33667,0.21005,0.21005,0.65,True,,"{
+    ""prediction"": 0.21005,
+    ""confidence"": 0.65
+}"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,5,4.33667,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,6,4.33667,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,7,4.33667,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,8,4.33667,0.57161,0.57161,0.75,True,,"```json
+{
+""prediction"": 0.57161,
+""confidence"": 0.75
+}
+```"
+premarshalling_astar,pop_10_op_m1_n13_250818_140658,9,4.33667,0.21005,0.21005,0.75,True,,"```json
+{
+""prediction"": 0.21005,
+""confidence"": 0.75
+}
+```"
+bin_greedy,pop_13_op_m1_n12_251225_060954,0,0.04206,0.028,0.028,0.75,True,,"```json
+{
+""prediction"": 0.028,
+""confidence"": 0.75
+}
+```"
+bin_greedy,pop_13_op_m1_n12_251225_060954,1,0.04206,0.032,0.032,0.72,True,,"{
+    ""prediction"": 0.032,
+    ""confidence"": 0.72
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,2,0.04206,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,3,0.04206,0.02832,0.02832,0.75,True,,"{
+    ""prediction"": 0.02832,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,4,0.04206,0.032,0.032,0.75,True,,"{
+    ""prediction"": 0.032,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,5,0.04206,0.037,0.037,0.65,True,,"{
+    ""prediction"": 0.037,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,6,0.04206,0.032,0.032,0.65,True,,"{
+    ""prediction"": 0.032,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,7,0.04206,0.025,0.025,0.65,True,,"{
+    ""prediction"": 0.025,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,8,0.04206,0.032,0.032,0.75,True,,"{
+    ""prediction"": 0.032,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_13_op_m1_n12_251225_060954,9,0.04206,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,0,0.05252,0.042,0.042,0.65,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,1,0.05252,0.042,0.042,0.65,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,2,0.05252,0.042,0.042,0.65,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,3,0.05252,0.04285,0.04285,0.72,True,,"```json
+{
+""prediction"": 0.04285,
+""confidence"": 0.72
+}
+```"
+bin_greedy,pop_12_op_e2_n7_251225_054527,4,0.05252,0.042,0.042,0.65,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,5,0.05252,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,6,0.05252,0.04285,0.04285,0.72,True,,"```json
+{
+""prediction"": 0.04285,
+""confidence"": 0.72
+}
+```"
+bin_greedy,pop_12_op_e2_n7_251225_054527,7,0.05252,0.042,0.042,0.65,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,8,0.05252,0.042,0.042,0.65,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_12_op_e2_n7_251225_054527,9,0.05252,0.042,0.042,0.65,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_7_op_m1_n11_251224_213407,0,0.02515,0.03,0.03,0.75,True,,"{
+    ""prediction"": 0.030,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_7_op_m1_n11_251224_213407,1,0.02515,0.01245,0.01245,0.72,True,,"```json
+{
+""prediction"": 0.01245,
+""confidence"": 0.72
+}
+```"
+bin_greedy,pop_7_op_m1_n11_251224_213407,2,0.02515,0.025,0.025,0.65,True,,"{
+    ""prediction"": 0.025,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_7_op_m1_n11_251224_213407,3,0.02515,0.025,0.025,0.65,True,,"```json
+{
+""prediction"": 0.025,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_7_op_m1_n11_251224_213407,4,0.02515,0.025,0.025,0.65,True,,"{
+    ""prediction"": 0.025,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_7_op_m1_n11_251224_213407,5,0.02515,0.025,0.025,0.65,True,,"```json
+{
+""prediction"": 0.025,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_7_op_m1_n11_251224_213407,6,0.02515,0.025,0.025,0.72,True,,"```json
+{
+""prediction"": 0.025,
+""confidence"": 0.72
+}
+```"
+bin_greedy,pop_7_op_m1_n11_251224_213407,7,0.02515,0.012,0.012,0.65,True,,"{
+    ""prediction"": 0.012,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_7_op_m1_n11_251224_213407,8,0.02515,0.012,0.012,0.65,True,,"```json
+{
+""prediction"": 0.012,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_7_op_m1_n11_251224_213407,9,0.02515,0.025,0.025,0.65,True,,"{
+    ""prediction"": 0.025,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,0,1.49643,0.045,0.045,0.7,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.7
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,1,1.49643,0.045,0.045,0.72,True,,"```json
+{
+""prediction"": 0.045,
+""confidence"": 0.72
+}
+```"
+bin_greedy,pop_17_op_e1_n17_251225_010046,2,1.49643,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,3,1.49643,0.032,0.032,0.75,True,,"{
+  ""prediction"": 0.032,
+  ""confidence"": 0.75
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,4,1.49643,0.045,0.045,0.65,True,,"```json
+{
+""prediction"": 0.045,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_17_op_e1_n17_251225_010046,5,1.49643,0.045,0.045,0.7,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.7
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,6,1.49643,0.035,0.035,0.7,True,,"{
+    ""prediction"": 0.035,
+    ""confidence"": 0.7
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,7,1.49643,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,8,1.49643,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_17_op_e1_n17_251225_010046,9,1.49643,0.032,0.032,0.75,True,,"{
+    ""prediction"": 0.032,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_14_op_m2_n0_251225_001033,0,0.02938,0.022,0.022,0.65,True,,"```json
+{
+""prediction"": 0.022,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_14_op_m2_n0_251225_001033,1,0.02938,0.02085,0.02085,0.72,True,,"{
+  ""prediction"": 0.02085,
+  ""confidence"": 0.72
+}"
+bin_greedy,pop_14_op_m2_n0_251225_001033,2,0.02938,0.018,0.018,0.65,True,,"{
+    ""prediction"": 0.018,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_14_op_m2_n0_251225_001033,3,0.02938,0.012,0.012,0.65,True,,"{
+  ""prediction"": 0.012,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_14_op_m2_n0_251225_001033,4,0.02938,0.025,0.025,0.65,True,,"```json
+{
+""prediction"": 0.025,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_14_op_m2_n0_251225_001033,5,0.02938,0.024,0.024,0.75,True,,"{
+  ""prediction"": 0.024,
+  ""confidence"": 0.75
+}"
+bin_greedy,pop_14_op_m2_n0_251225_001033,6,0.02938,0.04,0.04,0.65,True,,"Looking at the target heuristic and the references:
+
+**1. Semantic similarity analysis**  
+The target heuristic uses three main components:  
+- Inverse capacity with exponential decay (similar to Reference 1's quadratic inverse capacity and Reference 2's exponential decay)  
+- Deviation from optimal fill ratio (similar to Reference 2 and Reference 4)  
+- Uniformity reward based on usage counts (similar to Reference 2's entropy reward, but with a different formula)  
+
+The most similar reference is **Reference 2**, because:  
+- Both use `optimal_fill_ratio = 0.6 * np.max(bins)` (Ref 2 uses 0.75, but same structure)  
+- Both track `usage_counts` and reward uniformity  
+- Both apply normalization at the end (Ref 2 uses z-score, target uses sigmoid)  
+
+The second most similar is **Reference 1**, due to:  
+- Inverse capacity term  
+- Penalty for deviation from optimal fill  
+- Both combine multiple weighted factors  
+
+**2. Objective prediction**  
+Reference 2 objective: 0.03501  
+Reference 1 objective: 0.00563  
+
+The target heuristic is slightly more complex than Reference 2 (extra sigmoid normalization, different uniformity formula), but less complex than Reference 1's multiple adaptive factors.  
+Given it's closest to Reference 2 but with some extra complexity, I predict an objective slightly worse than Reference 2 but better than Reference 3 (0.05071).  
+
+Interpolating between Ref 2 (0.03501) and Ref 3 (0.05071), leaning toward Ref 2:  
+Prediction ≈ **0.040**
+
+**3. Confidence**  
+Confidence is moderate (0.65) because:  
+- Clear structural similarity to Reference 2  
+- But exact performance depends on weight tuning and randomness in `usage_counts`/`np.random.randint`  
+- The sigmoid normalization could help or hurt performance  
+
+```json
+{
+""prediction"": 0.040,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_14_op_m2_n0_251225_001033,7,0.02938,0.022,0.022,0.75,True,,"{
+  ""prediction"": 0.022,
+  ""confidence"": 0.75
+}"
+bin_greedy,pop_14_op_m2_n0_251225_001033,8,0.02938,0.032,0.032,0.65,True,,"{
+    ""prediction"": 0.032,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_14_op_m2_n0_251225_001033,9,0.02938,1.0,1.0,,True,Used float fallback (no JSON).,"Looking at the target heuristic and the references:
+
+**1. Semantic similarity analysis**  
+The target heuristic uses:
+- Inverse capacity with exponential decay (similar to reference 2's `exp_decay_capacity` but with different scaling)
+- Deviation from optimal fill ratio (similar to references 2 and 3)
+- Usage uniformity reward (unique to target, but reference 2 has `entropy_reward` for similar purpose)
+- Final sigmoid normalization (similar to reference 4's `sigmoid_scores` but applied at end)
+
+Most similar references:  
+- **Reference 2** – has exponential decay, fill ratio deviation, usage-based reward, and normalization  
+- **Reference 4** – uses sigmoid transformation and fill ratio deviation  
+- **Reference 1** – uses inverse capacity and fill ratio deviation
+
+**2. Objective prediction**  
+Reference objectives: 0.00563, 0.03501, 0.05071, 0.56927, 1.51534  
+
+The target heuristic is moderately complex but has some problematic aspects:
+- `inv_capacity = 1 / (bins - item)` can cause division by zero or near-zero issues  
+- Random `usage_counts` makes the heuristic non-deterministic  
+- Weight sum is 0.6 - 0.3 + 0.4 = 0.7 (not normalized to 1)  
+- Final sigmoid transformation may compress scores too much
+
+Given it's more complex than reference 2 (0.03501) but less stable than reference 1 (0.00563), and has randomness like reference 2, I'd place it between references 2 and 4 in performance.  
+Weighted interpolation:  
+- 50% reference 2 (0.03501)  
+- 30% reference 4 (0.56927)  
+- 20% reference 1 (0.00563)  
+
+Predicted objective = 0.5×0.03501 + 0.3×0.56927 + 0.2×0.00563 ≈ 0.0175 + 0.1708 + 0.0011 = **0.1894**
+
+**3. Confidence**  
+Confidence is moderate (0.65) because:
+- The randomness in `usage_counts` makes performance unpredictable  
+- Division by `(bins - item)` could cause instability  
+- But structure is similar to mid-performing references
+
+```"
+bin_greedy,pop_4_op_e1_n14_251224_202609,0,0.03884,0.028,0.028,0.65,True,,"{
+    ""prediction"": 0.028,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,1,0.03884,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,2,0.03884,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,3,0.03884,0.035,0.035,0.65,True,,"{
+  ""prediction"": 0.035,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,4,0.03884,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,5,0.03884,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,6,0.03884,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,7,0.03884,0.025,0.025,0.65,True,,"{
+    ""prediction"": 0.025,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,8,0.03884,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_4_op_e1_n14_251224_202609,9,0.03884,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,0,1.51534,0.56847,0.56847,0.7,True,,"{
+  ""prediction"": 0.56847,
+  ""confidence"": 0.7
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,1,1.51534,0.56847,0.56847,0.65,True,,"```json
+{
+""prediction"": 0.56847,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_0_op_i1_n18_251224_134318,2,1.51534,0.56847,0.56847,0.65,True,,"{
+    ""prediction"": 0.56847,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,3,1.51534,0.56847,0.56847,0.65,True,,"{
+  ""prediction"": 0.56847,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,4,1.51534,0.56847,0.56847,0.65,True,,"{
+  ""prediction"": 0.56847,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,5,1.51534,0.56847,0.56847,0.65,True,,"{
+  ""prediction"": 0.56847,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,6,1.51534,0.56847,0.56847,0.7,True,,"{
+    ""prediction"": 0.56847,
+    ""confidence"": 0.7
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,7,1.51534,0.56847,0.56847,0.7,True,,"{
+    ""prediction"": 0.56847,
+    ""confidence"": 0.7
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,8,1.51534,0.56847,0.56847,0.65,True,,"{
+  ""prediction"": 0.56847,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_i1_n18_251224_134318,9,1.51534,0.56847,0.56847,0.75,True,,"{
+    ""prediction"": 0.56847,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_13_op_e2_n14_251224_233730,0,0.03904,0.035,0.035,0.75,True,,"{
+    ""prediction"": 0.035,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_13_op_e2_n14_251224_233730,1,0.03904,0.05071,0.05071,0.85,True,,"{
+  ""prediction"": 0.05071,
+  ""confidence"": 0.85
+}"
+bin_greedy,pop_13_op_e2_n14_251224_233730,2,0.03904,0.03501,0.03501,0.75,True,,"{
+  ""prediction"": 0.03501,
+  ""confidence"": 0.75
+}"
+bin_greedy,pop_13_op_e2_n14_251224_233730,3,0.03904,0.042,0.042,0.65,True,,"```json
+{
+""prediction"": 0.042,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_13_op_e2_n14_251224_233730,4,0.03904,0.042,0.042,0.65,True,,"{
+  ""prediction"": 0.042,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_13_op_e2_n14_251224_233730,5,0.03904,0.045,0.045,0.72,True,,"```json
+{
+""prediction"": 0.045,
+""confidence"": 0.72
+}
+```"
+bin_greedy,pop_13_op_e2_n14_251224_233730,6,0.03904,0.035,0.035,0.65,True,,"{
+    ""prediction"": 0.035,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_13_op_e2_n14_251224_233730,7,0.03904,0.045,0.045,0.65,True,,"```json
+{
+""prediction"": 0.045,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_13_op_e2_n14_251224_233730,8,0.03904,0.05071,0.05071,0.75,True,,"{
+  ""prediction"": 0.05071,
+  ""confidence"": 0.75
+}"
+bin_greedy,pop_13_op_e2_n14_251224_233730,9,0.03904,0.045,0.045,0.65,True,,"```json
+{
+""prediction"": 0.045,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_0_op_m2_n4_251224_193827,0,0.08693,0.02832,0.02832,0.72,True,,"```json
+{
+""prediction"": 0.02832,
+""confidence"": 0.72
+}
+```"
+bin_greedy,pop_0_op_m2_n4_251224_193827,1,0.08693,0.042,0.042,0.65,True,,"{
+  ""prediction"": 0.042,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_m2_n4_251224_193827,2,0.08693,0.02032,0.02032,0.65,True,,"{
+    ""prediction"": 0.02032,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_m2_n4_251224_193827,3,0.08693,0.02282,0.02282,0.65,True,,"{
+    ""prediction"": 0.02282,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_m2_n4_251224_193827,4,0.08693,0.025,0.025,0.65,True,,"```json
+{
+""prediction"": 0.025,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_0_op_m2_n4_251224_193827,5,0.08693,0.032,0.032,0.68,True,,"```json
+{
+""prediction"": 0.032,
+""confidence"": 0.68
+}
+```"
+bin_greedy,pop_0_op_m2_n4_251224_193827,6,0.08693,0.032,0.032,0.65,True,,"{
+  ""prediction"": 0.032,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_m2_n4_251224_193827,7,0.08693,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_m2_n4_251224_193827,8,0.08693,0.028,0.028,0.65,True,,"{
+  ""prediction"": 0.028,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_0_op_m2_n4_251224_193827,9,0.08693,0.042,0.042,0.65,True,,"```json
+{
+""prediction"": 0.042,
+""confidence"": 0.65
+}
+```"
+bin_greedy,pop_15_op_m1_n7_251225_064917,0,0.8693,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,1,0.8693,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,2,0.8693,0.042,0.042,0.75,True,,"{
+    ""prediction"": 0.042,
+    ""confidence"": 0.75
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,3,0.8693,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,4,0.8693,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,5,0.8693,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,6,0.8693,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,7,0.8693,0.045,0.045,0.65,True,,"{
+  ""prediction"": 0.045,
+  ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,8,0.8693,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+bin_greedy,pop_15_op_m1_n7_251225_064917,9,0.8693,0.045,0.045,0.65,True,,"{
+    ""prediction"": 0.045,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,0,3631069.5,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,1,3631069.5,3545000.0,3545000.0,0.65,True,,"```json
+{
+""prediction"": 3545000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,2,3631069.5,3560000.0,3560000.0,0.65,True,,"```json
+{
+""prediction"": 3560000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,3,3631069.5,3540000.0,3540000.0,0.65,True,,"```json
+{
+""prediction"": 3540000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,4,3631069.5,3570000.0,3570000.0,0.65,True,,"```json
+{
+""prediction"": 3570000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,5,3631069.5,3620000.0,3620000.0,0.65,True,,"{
+  ""prediction"": 3620000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,6,3631069.5,3570000.0,3570000.0,0.65,True,,"```json
+{
+""prediction"": 3570000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,7,3631069.5,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,8,3631069.5,3580000.0,3580000.0,0.65,True,,"```json
+{
+""prediction"": 3580000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_18_op_e2_n14_251228_033156,9,3631069.5,3650000.0,3650000.0,0.65,True,,"{
+  ""prediction"": 3650000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,0,3794588.3,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,1,3794588.3,3650000.0,3650000.0,0.65,True,,"{
+  ""prediction"": 3650000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,2,3794588.3,3645000.0,3645000.0,0.65,True,,"```json
+{
+""prediction"": 3645000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,3,3794588.3,3615000.0,3615000.0,0.65,True,,"```json
+{
+""prediction"": 3615000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,4,3794588.3,3710000.0,3710000.0,0.65,True,,"```json
+{
+""prediction"": 3710000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,5,3794588.3,3610000.0,3610000.0,0.65,True,,"{
+  ""prediction"": 3610000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,6,3794588.3,3619337.2,3619337.2,0.65,True,,"```json
+{
+""prediction"": 3619337.2,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,7,3794588.3,3650000.0,3650000.0,0.65,True,,"```json
+{
+""prediction"": 3650000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,8,3794588.3,3618337.2,3618337.2,0.65,True,,"```json
+{
+""prediction"": 3618337.2,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n18_251226_051356,9,3794588.3,3618337.2,3618337.2,0.65,True,,"```json
+{
+""prediction"": 3618337.2,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,0,3514065.6,3617340.5,3617340.5,0.72,True,,"```json
+{
+""prediction"": 3617340.5,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,1,3514065.6,3590000.0,3590000.0,0.65,True,,"```json
+{
+""prediction"": 3590000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,2,3514065.6,3650000.0,3650000.0,0.65,True,,"{
+    ""prediction"": 3650000.0,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,3,3514065.6,3617340.5,3617340.5,0.65,True,,"```json
+{
+""prediction"": 3617340.5,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,4,3514065.6,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,5,3514065.6,3610000.0,3610000.0,0.65,True,,"{
+    ""prediction"": 3610000.0,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,6,3514065.6,3617340.5,3617340.5,0.65,True,,"```json
+{
+""prediction"": 3617340.5,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,7,3514065.6,3610000.0,3610000.0,0.65,True,,"{
+    ""prediction"": 3610000.0,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,8,3514065.6,3640000.0,3640000.0,0.65,True,,"```json
+{
+""prediction"": 3640000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_2_op_m2_n16_251225_235254,9,3514065.6,3620000.0,3620000.0,0.65,True,,"```json
+{
+""prediction"": 3620000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,0,3435513.9,3615000.0,3615000.0,0.65,True,,"```json
+{
+""prediction"": 3615000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,1,3435513.9,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,2,3435513.9,3670000.0,3670000.0,0.65,True,,"{
+  ""prediction"": 3670000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,3,3435513.9,3610000.0,3610000.0,0.72,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,4,3435513.9,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,5,3435513.9,3614839.5,3614839.5,0.65,True,,"```json
+{
+""prediction"": 3614839.5,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,6,3435513.9,3617340.5,3617340.5,0.72,True,,"```json
+{
+""prediction"": 3617340.5,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,7,3435513.9,3620000.0,3620000.0,0.65,True,,"{
+  ""prediction"": 3620000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,8,3435513.9,3590000.0,3590000.0,0.65,True,,"```json
+{
+""prediction"": 3590000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_13_op_m2_n3_251227_121005,9,3435513.9,3620000.0,3620000.0,0.65,True,,"```json
+{
+""prediction"": 3620000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,0,3571300.2,3480000.0,3480000.0,0.75,True,,"```json
+{
+""prediction"": 3480000.0,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,1,3571300.2,3480000.0,3480000.0,0.75,True,,"```json
+{
+""prediction"": 3480000.0,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,2,3571300.2,3439936.7,3439936.7,0.72,True,,"```json
+{
+""prediction"": 3439936.7,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,3,3571300.2,3439936.7,3439936.7,0.75,True,,"```json
+{
+""prediction"": 3439936.7,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,4,3571300.2,3540000.0,3540000.0,0.75,True,,"```json
+{
+""prediction"": 3540000.0,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,5,3571300.2,3480000.0,3480000.0,0.75,True,,"```json
+{
+""prediction"": 3480000.0,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,6,3571300.2,3550000.0,3550000.0,0.65,True,,"```json
+{
+""prediction"": 3550000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,7,3571300.2,3470000.0,3470000.0,0.75,True,,"```json
+{
+""prediction"": 3470000.0,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,8,3571300.2,3560000.0,3560000.0,0.75,True,,"```json
+{
+""prediction"": 3560000.0,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_4_op_m2_n10_251226_055944,9,3571300.2,3480000.0,3480000.0,0.75,True,,"```json
+{
+""prediction"": 3480000.0,
+""confidence"": 0.75
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,0,3706199.7,3614336.9,3614336.9,0.72,True,,"```json
+{
+""prediction"": 3614336.9,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,1,3706199.7,3650000.0,3650000.0,0.65,True,,"```json
+{
+""prediction"": 3650000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,2,3706199.7,3620000.0,3620000.0,0.65,True,,"```json
+{
+""prediction"": 3620000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,3,3706199.7,3620000.0,3620000.0,0.65,True,,"```json
+{
+""prediction"": 3620000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,4,3706199.7,3564936.8,3564936.8,0.72,True,,"```json
+{
+""prediction"": 3564936.8,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,5,3706199.7,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,6,3706199.7,3650000.0,3650000.0,0.65,True,,"{
+    ""prediction"": 3650000.0,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,7,3706199.7,3650000.0,3650000.0,0.65,True,,"```json
+{
+""prediction"": 3650000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,8,3706199.7,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e1_n18_251228_060424,9,3706199.7,3564936.8,3564936.8,0.72,True,,"```json
+{
+""prediction"": 3564936.8,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,0,3605747.2,3570000.0,3570000.0,0.65,True,,"```json
+{
+""prediction"": 3570000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,1,3605747.2,3560000.0,3560000.0,0.65,True,,"```json
+{
+""prediction"": 3560000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,2,3605747.2,3590000.0,3590000.0,0.65,True,,"{
+    ""prediction"": 3590000.0,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,3,3605747.2,3590000.0,3590000.0,0.65,True,,"{
+    ""prediction"": 3590000.0,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,4,3605747.2,3610000.0,3610000.0,0.65,True,,"{
+    ""prediction"": 3610000.0,
+    ""confidence"": 0.65
+}"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,5,3605747.2,3619346.9,3619346.9,0.72,True,,"```json
+{
+""prediction"": 3619346.9,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,6,3605747.2,3650000.0,3650000.0,0.65,True,,"```json
+{
+""prediction"": 3650000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,7,3605747.2,3560000.0,3560000.0,0.65,True,,"{
+  ""prediction"": 3560000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,8,3605747.2,3590000.0,3590000.0,0.65,True,,"```json
+{
+""prediction"": 3590000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_19_op_e2_n2_251228_065631,9,3605747.2,3650000.0,3650000.0,0.65,True,,"{
+  ""prediction"": 3650000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,0,3615939.7,3617348.9,3617348.9,0.65,True,,"```json
+{
+""prediction"": 3617348.9,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,1,3615939.7,3692252.8,3692252.8,0.85,True,,"```json
+{
+""prediction"": 3692252.8,
+""confidence"": 0.85
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,2,3615939.7,3650000.0,3650000.0,0.65,True,,"```json
+{
+""prediction"": 3650000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,3,3615939.7,3617348.9,3617348.9,0.65,True,,"```json
+{
+""prediction"": 3617348.9,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,4,3615939.7,3620000.0,3620000.0,0.65,True,,"```json
+{
+""prediction"": 3620000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,5,3615939.7,3640000.0,3640000.0,0.65,True,,"```json
+{
+""prediction"": 3640000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,6,3615939.7,3650000.0,3650000.0,0.65,True,,"```json
+{
+""prediction"": 3650000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,7,3615939.7,3617348.9,3617348.9,0.65,True,,"```json
+{
+""prediction"": 3617348.9,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,8,3615939.7,3650000.0,3650000.0,0.65,True,,"```json
+{
+""prediction"": 3650000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_4_op_m1_n15_251226_051356,9,3615939.7,3630000.0,3630000.0,0.65,True,,"```json
+{
+""prediction"": 3630000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,0,3932405.2,3560000.0,3560000.0,0.65,True,,"```json
+{
+""prediction"": 3560000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,1,3932405.2,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,2,3932405.2,3615000.0,3615000.0,0.65,True,,"```json
+{
+""prediction"": 3615000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,3,3932405.2,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,4,3932405.2,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,5,3932405.2,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,6,3932405.2,3630000.0,3630000.0,0.65,True,,"```json
+{
+""prediction"": 3630000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,7,3932405.2,3630000.0,3630000.0,0.65,True,,"```json
+{
+""prediction"": 3630000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,8,3932405.2,3610000.0,3610000.0,0.65,True,,"```json
+{
+""prediction"": 3610000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_5_op_e2_n18_251226_073535,9,3932405.2,3560000.0,3560000.0,0.65,True,,"```json
+{
+""prediction"": 3560000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,0,3530398.7,3615000.0,3615000.0,0.65,True,,"```json
+{
+""prediction"": 3615000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,1,3530398.7,3614870.5,3614870.5,0.65,True,,"```json
+{
+""prediction"": 3614870.5,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,2,3530398.7,3614860.5,3614860.5,0.72,True,,"```json
+{
+""prediction"": 3614860.5,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,3,3530398.7,3614870.5,3614870.5,0.65,True,,"```json
+{
+""prediction"": 3614870.5,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,4,3530398.7,3615000.0,3615000.0,0.65,True,,"```json
+{
+""prediction"": 3615000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,5,3530398.7,3615000.0,3615000.0,0.65,True,,"```json
+{
+""prediction"": 3615000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,6,3530398.7,3610000.0,3610000.0,0.65,True,,"{
+  ""prediction"": 3610000.0,
+  ""confidence"": 0.65
+}"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,7,3530398.7,3615000.0,3615000.0,0.65,True,,"```json
+{
+""prediction"": 3615000.0,
+""confidence"": 0.65
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,8,3530398.7,3614839.5,3614839.5,0.72,True,,"```json
+{
+""prediction"": 3614839.5,
+""confidence"": 0.72
+}
+```"
+cvrp_lns,pop_8_op_m1_n18_251226_182024,9,3530398.7,3560000.0,3560000.0,0.65,True,,"{
+  ""prediction"": 3560000.0,
+  ""confidence"": 0.65
+}"
