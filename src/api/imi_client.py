@@ -3,6 +3,7 @@ import hashlib
 import random
 import re
 from typing import Optional, List, Dict, Any
+from wsgiref import headers
 
 import requests
 from requests.exceptions import Timeout, ConnectionError, HTTPError
@@ -49,7 +50,10 @@ class IMILLMClient(LLMClient):
         self.max_retries = max_retries
         self.backoff_base_s = backoff_base_s
         self.num_ctx = num_ctx
-        self.cache = JsonlCache(cache_path)
+        if cache_path is None:
+            self.cache = None
+        else:
+            self.cache = JsonlCache(cache_path)
 
     def _prompt_hash(
         self,
@@ -91,14 +95,16 @@ class IMILLMClient(LLMClient):
         model = self.cfg.model
         prompt_hash = self._prompt_hash(prompt, temperature, max_tokens, stop, model)
 
-        cached = self.cache.get(prompt_hash)
-        if cached is not None:
-            return cached
+        if self.cache is not None:
+            cached = self.cache.get(prompt_hash)
+            if cached is not None:
+                return cached
 
-        headers = {
-            "Authorization": f"Bearer {self.cfg.api_key}",
-            "Content-Type": "application/json",
-        }
+
+        headers = {"Content-Type": "application/json"}
+        if self.cfg.api_key:
+            headers["Authorization"] = f"Bearer {self.cfg.api_key}"
+
 
         payload: Dict[str, Any] = {
             "prompt": prompt.strip(),
@@ -137,7 +143,8 @@ class IMILLMClient(LLMClient):
                     latency_s=latency,
                     cached=False,
                 )
-                self.cache.put(resp)
+                if self.cache is not None:
+                    self.cache.put(resp)
                 return resp
 
             except HTTPError as e:

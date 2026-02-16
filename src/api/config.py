@@ -11,17 +11,12 @@ class IMIConfig:
 
 
 def load_imi_config() -> IMIConfig:
-    # Prof-Vorgabe:
-    # URL: https://api3.imi-services.imi.kit.edu/api/generate
-    # Model: qwen3-coder:32b
     base_url = os.getenv(
         "IMI_API_BASE_URL",
         "https://api3.imi-services.imi.kit.edu/api/generate",
     )
-    model = os.getenv("IMI_MODEL", "qwen3-coder:32b")
-    api_key = os.getenv("IMI_API_KEY", "")
-
-    if not api_key:
-        raise ValueError("Missing IMI_API_KEY environment variable.")
+    model = os.getenv("IMI_MODEL", "qwen2.5-coder:14b")
+    api_key = os.getenv("IMI_API_KEY", "").strip()  # optional
 
     return IMIConfig(base_url=base_url, model=model, api_key=api_key)
+
