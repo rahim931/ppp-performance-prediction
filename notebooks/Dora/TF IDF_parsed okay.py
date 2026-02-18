@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Per-task TF-IDF + Cosine analysis from friend's global parse_ok dataset.
+Per-task TF-IDF + Cosine analysis from global parse_ok dataset.
 
 - Loads: E:\Python\HRT\Project_4\all_heuristics_dataset.pkl
 - Prints unique values for potential task columns (so you can verify naming)
@@ -13,7 +13,6 @@ Tasks you want:
   - premarshalling_astar
   - puzzle_astar
 
-Your friend's dataset may contain:
   - raw_app_type: e.g., "bin_greedy", "cvrp_lns", ...
   - task_name: e.g., "BinPacking", "CVRP", "Premarshalling", "SlidingPuzzle"
 We will auto-detect and map both possibilities.
