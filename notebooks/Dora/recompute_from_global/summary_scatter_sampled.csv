@@ -1,0 +1,13 @@
+﻿task,method,pearson_r_sampled,scatter_png
+bin_greedy,tfidf,0.0965835228562355,E:\Python\HRT\Project_4\outputs\recompute_from_global\bin_greedy\tfidf\scatter_tfidf.png
+bin_greedy,ast,0.03632955998182297,E:\Python\HRT\Project_4\outputs\recompute_from_global\bin_greedy\ast\scatter_ast.png
+bin_greedy,jaccard,0.031208951026201248,E:\Python\HRT\Project_4\outputs\recompute_from_global\bin_greedy\jaccard\scatter_jaccard.png
+cvrp_lns,tfidf,0.011284523643553257,E:\Python\HRT\Project_4\outputs\recompute_from_global\cvrp_lns\tfidf\scatter_tfidf.png
+cvrp_lns,ast,0.08799300342798233,E:\Python\HRT\Project_4\outputs\recompute_from_global\cvrp_lns\ast\scatter_ast.png
+cvrp_lns,jaccard,0.05469309911131859,E:\Python\HRT\Project_4\outputs\recompute_from_global\cvrp_lns\jaccard\scatter_jaccard.png
+premarshalling_astar,tfidf,0.04413696750998497,E:\Python\HRT\Project_4\outputs\recompute_from_global\premarshalling_astar\tfidf\scatter_tfidf.png
+premarshalling_astar,ast,0.005302890203893185,E:\Python\HRT\Project_4\outputs\recompute_from_global\premarshalling_astar\ast\scatter_ast.png
+premarshalling_astar,jaccard,0.058306194841861725,E:\Python\HRT\Project_4\outputs\recompute_from_global\premarshalling_astar\jaccard\scatter_jaccard.png
+puzzle_astar,tfidf,-0.06026793643832207,E:\Python\HRT\Project_4\outputs\recompute_from_global\puzzle_astar\tfidf\scatter_tfidf.png
+puzzle_astar,ast,0.038859471678733826,E:\Python\HRT\Project_4\outputs\recompute_from_global\puzzle_astar\ast\scatter_ast.png
+puzzle_astar,jaccard,0.0757429301738739,E:\Python\HRT\Project_4\outputs\recompute_from_global\puzzle_astar\jaccard\scatter_jaccard.png

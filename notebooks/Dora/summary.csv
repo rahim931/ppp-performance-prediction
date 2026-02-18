@@ -1,0 +1,5 @@
+﻿app_type,rows_total,mains_selected,neighbors_per_main,rows_in_output,objective_bins_used,strategies_used
+bin_greedy,4445,10,5,50,"high,low,mid","e1,e2,i1,m1,m2"
+cvrp_lns,1557,10,5,50,"high,low,mid","e1,e2,i1,m1,m2"
+premarshalling_astar,4647,10,5,50,"high,low,mid","e1,e2,i1,m1,m2"
+puzzle_astar,4858,10,5,50,"high,low,mid","e1,e2,i1,m1,m2"
