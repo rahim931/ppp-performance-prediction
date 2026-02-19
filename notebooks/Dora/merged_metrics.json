@@ -1,0 +1,172 @@
+[
+    {
+        "source": "binpacking_ast_metrics.json",
+        "content": {
+            "task": "BinPacking",
+            "n_total_rows_in_file": 4445,
+            "n_parse_ok": 4445,
+            "n_parse_fail": 0,
+            "struct_distance": "cosine(feature_vector)",
+            "perf_distance": "abs(objective_i - objective_j)",
+            "pearson_r": 0.05855543245310803,
+            "pearson_p": 0.0,
+            "mantel_r": 0.05855543245310803,
+            "mantel_p": 0.001,
+            "overlap_at_10": 0.01637795275590551,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    },
+    {
+        "source": "binpacking_tfidf.json",
+        "content": {
+            "task": "BinPacking",
+            "n_rows_after_cleaning": 4445,
+            "tfidf": {
+                "ngram_range": [
+                    1,
+                    2
+                ],
+                "min_df": 2,
+                "max_df": 0.95,
+                "max_features": 50000
+            },
+            "perf_distance": "abs(objective_i - objective_j)",
+            "tfidf_distance": "1 - cosine_similarity(TFIDF(code))",
+            "pearson_r": 0.05911297723650932,
+            "pearson_p": 0.0,
+            "mantel_r": 0.05911297723650932,
+            "mantel_p": 0.001,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    },
+    {
+        "source": "cvrp_ast_metrics.json",
+        "content": {
+            "task": "CVRP",
+            "n_total_after_cleaning": 1557,
+            "n_parse_ok": 1557,
+            "n_parse_fail": 0,
+            "struct_distance": "cosine(feature_vector)",
+            "perf_distance": "abs(objective_i - objective_j)",
+            "pearson_r": 0.09608461543467413,
+            "pearson_p": 0.0,
+            "mantel_r": 0.09608461543467413,
+            "mantel_p": 0.001,
+            "overlap_at_10": 0.015414258188824663,
+            "overlap_k": 10,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    },
+    {
+        "source": "cvrp_tfidf_metrics.json",
+        "content": {
+            "task": "CVRP",
+            "n_rows_after_cleaning": 1557,
+            "tfidf": {
+                "ngram_range": [
+                    1,
+                    2
+                ],
+                "min_df": 2,
+                "max_df": 0.95,
+                "max_features": 50000
+            },
+            "perf_distance": "abs(objective_i - objective_j)",
+            "tfidf_distance": "1 - cosine_similarity(TFIDF(code))",
+            "pearson_r": 0.08161666989326477,
+            "pearson_p": 0.0,
+            "mantel_r": 0.08161666989326477,
+            "mantel_p": 0.001,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    },
+    {
+        "source": "premaarshalling_ast_metrics.json",
+        "content": {
+            "task": "Premarshalling",
+            "n_total_after_cleaning": 4647,
+            "n_parse_ok": 4647,
+            "n_parse_fail": 0,
+            "struct_distance": "cosine(feature_vector)",
+            "perf_distance": "abs(objective_i - objective_j)",
+            "pearson_r": 0.032799832405034465,
+            "pearson_p": 0.0,
+            "mantel_r": 0.032799832405034465,
+            "mantel_p": 0.001,
+            "overlap_at_10": 0.05829567462879277,
+            "overlap_k": 10,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    },
+    {
+        "source": "premarshalling_tfidfmetrics.json",
+        "content": {
+            "task": "Premarshalling",
+            "n_rows_after_cleaning": 4647,
+            "tfidf": {
+                "ngram_range": [
+                    1,
+                    2
+                ],
+                "min_df": 2,
+                "max_df": 0.95,
+                "max_features": 50000
+            },
+            "perf_distance": "abs(objective_i - objective_j)",
+            "tfidf_distance": "1 - cosine_similarity(TFIDF(code))",
+            "pearson_r": 0.03171420097351074,
+            "pearson_p": 0.0,
+            "mantel_r": 0.03171420097351074,
+            "mantel_p": 0.001,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    },
+    {
+        "source": "puzzle_ast_metrics.json",
+        "content": {
+            "task": "SlidingPuzzle",
+            "n_total_rows_in_file": 4920,
+            "n_parse_ok": 4858,
+            "n_parse_fail": 62,
+            "struct_distance": "cosine(feature_vector)",
+            "perf_distance": "abs(objective_i - objective_j)",
+            "pearson_r": 0.025433482800623464,
+            "pearson_p": 0.0,
+            "mantel_r": 0.025433482800623464,
+            "mantel_p": 0.001,
+            "overlap_at_10": 0.048744339234252775,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    },
+    {
+        "source": "puzzle_tfidf_metrics.json",
+        "content": {
+            "task": "SlidingPuzzle",
+            "n_rows_after_cleaning": 4920,
+            "tfidf": {
+                "ngram_range": [
+                    1,
+                    2
+                ],
+                "min_df": 2,
+                "max_df": 0.95,
+                "max_features": 50000
+            },
+            "perf_distance": "abs(objective_i - objective_j)",
+            "tfidf_distance": "1 - cosine_similarity(TFIDF(code))",
+            "pearson_r": 0.0015057377750054002,
+            "pearson_p": 1.6243195943843602e-07,
+            "mantel_r": 0.0015057377750054002,
+            "mantel_p": 0.602,
+            "mantel_permutations": 999,
+            "random_seed": 42
+        }
+    }
+]
